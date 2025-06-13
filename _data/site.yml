@@ -25,7 +25,7 @@ hero:
   subtitle: "Distribuidora especializada en productos de limpieza para gastronomía"
   cta_text: "Ver catálogo"
   cta_link: "#catalogo"
-  background_image: "{{ site.baseurl }}/assets/images/15.jpeg"
+  background_image: "/assets/images/15.jpeg"
 
 # Datos de contacto
 contact:
