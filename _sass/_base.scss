@@ -1,0 +1,431 @@
+@use 'sass:color';
+
+// Reset básico
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
+  color: $gray-800;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  &.loading {
+    overflow: hidden;
+  }
+  
+  &.loaded {
+    .epic-loader {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.8s ease-out;
+    }
+  }
+}
+
+// Elementos básicos
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 $spacing-md 0;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  color: $gray-900;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-base; }
+
+p {
+  margin: 0 0 $spacing-md 0;
+  line-height: 1.7;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $primary-dark;
+    text-decoration: underline;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  margin: 0 0 $spacing-md 0;
+  padding-left: $spacing-lg;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// Contenedor principal
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-xl;
+  }
+}
+
+// Botones
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: $border-radius-lg;
+  cursor: pointer;
+  transition: all $transition-fast;
+  white-space: nowrap;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  // Tamaños
+  &.btn-sm {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-sm;
+  }
+  
+  &.btn-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+  }
+  
+  // Variantes
+  &.btn-primary {
+    color: $white;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-dark;
+      border-color: $primary-dark;
+      text-decoration: none;
+    }
+  }
+  
+  &.btn-outline {
+    color: $white;
+    background-color: transparent;
+    border-color: rgba($white, 0.8);
+    border-width: 2px;
+    
+    &:hover {
+      color: $gray-900;
+      background-color: $white;
+      border-color: $white;
+      text-decoration: none;
+    }
+  }
+  
+  &.btn-secondary {
+    color: $white;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    
+    &:hover {
+      background-color: color.adjust($secondary-color, $lightness: -10%);
+      border-color: color.adjust($secondary-color, $lightness: -10%);
+      text-decoration: none;
+    }
+  }
+}
+
+// Secciones
+section {
+  padding: $spacing-4xl 0;
+  
+  &:nth-child(even) {
+    background-color: $light-gray;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+  
+  .section-title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+    margin-bottom: $spacing-md;
+  }
+  
+  .section-subtitle {
+    font-size: $font-size-lg;
+    color: $gray-600;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.subsection-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  color: $gray-900;
+  text-align: center;
+  margin: $spacing-3xl 0 $spacing-2xl 0;
+}
+
+// Grids
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Utilidades
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+// Animaciones
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+// Scroll suave para anclas
+html {
+  scroll-padding-top: 80px; // Altura del header fijo
+}
+
+// Hero background optimizado para fotos reales
+.hero-background {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  // Mejoras para fotos de celular vertical
+  @media (max-width: $breakpoint-md) {
+    background-position: center 30%; // Ajustar posición en móvil
+  }
+  
+  // Fallback si no hay imagen
+  &:not([style*="background-image"]) {
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+      linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #10b981 100%);
+  }
+}
+
+// Placeholders para logos
+.logo img[src*="logo.png"] {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  background: $gray-800;
+  border-radius: 6px;
+  
+  &::after {
+    content: 'ALMACÉN DE LIMPIEZA';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+}
+
+// Placeholders para imágenes de productos/depósito
+img[src*="deposito"], img[src*="productos"] {
+  background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &::before {
+    content: '📦';
+    font-size: 48px;
+    opacity: 0.5;
+  }
+}
+
+// 🚀 EPIC LOADING SCREEN
+.epic-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  .loader-content {
+    text-align: center;
+    color: $white;
+    
+    .loader-logo {
+      font-family: $font-family-heading;
+      font-size: $font-size-3xl;
+      font-weight: 800;
+      margin-bottom: $spacing-lg;
+      animation: logoGlow 2s ease-in-out infinite alternate;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-2xl;
+      }
+    }
+    
+    .loader-text {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xl;
+      opacity: 0.9;
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-base;
+      }
+    }
+    
+    .loader-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba($white, 0.3);
+      border-top: 4px solid $white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    text-shadow: 0 0 20px rgba($white, 0.5);
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba($white, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

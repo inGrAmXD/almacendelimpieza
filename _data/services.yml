@@ -1,0 +1,76 @@
+# Servicios principales
+services:
+  - title: "Distribución Mayorista"
+    description: "Productos de limpieza profesional por mayor con precios competitivos y entregas programadas."
+    icon: "truck"
+    
+  - title: "Asesoramiento Técnico"
+    description: "Recomendamos los productos más adecuados según el tipo de establecimiento y necesidades."
+    icon: "shield"
+    
+  - title: "Entregas Programadas"
+    description: "Sistema de entregas regulares para garantizar que nunca te quedes sin stock."
+    icon: "clock"
+
+# Rubros que atienden (sector gastronómico)
+sectors:
+  - title: "Restaurantes"
+    description: "Productos especializados para cocinas profesionales, comedores y áreas de atención al público."
+    icon: "restaurant"
+    products:
+      - "Desengrasantes industriales"
+      - "Detergentes para vajilla"
+      - "Sanitizantes de superficies"
+      - "Productos para pisos de alto tránsito"
+      
+  - title: "Bares y Pubs"
+    description: "Soluciones de limpieza para barras, cristalería y espacios de entretenimiento."
+    icon: "wine-glass"
+    products:
+      - "Limpiadores de cristal"
+      - "Desinfectantes para barras"
+      - "Productos para acero inoxidable"
+      - "Ambientadores profesionales"
+      
+  - title: "Comedores Industriales"
+    description: "Productos de alto rendimiento para grandes volúmenes y uso intensivo."
+    icon: "factory"
+    products:
+      - "Desinfectantes de gran formato"
+      - "Detergentes concentrados"
+      - "Productos para equipamiento industrial"
+      - "Sistemas de limpieza automática"
+      
+  - title: "Catering y Eventos"
+    description: "Soluciones portables y eficientes para servicios móviles y eventos especiales."
+    icon: "catering"
+    products:
+      - "Productos de limpieza portables"
+      - "Sanitizantes de acción rápida"
+      - "Toallas y paños profesionales"
+      - "Sistemas de higiene personal"
+
+# Categorías de productos
+product_categories:
+  - name: "Detergentes y Desengrasantes"
+    description: "Productos para eliminar grasa y suciedad en cocinas profesionales"
+    
+  - name: "Desinfectantes y Sanitizantes"
+    description: "Productos certificados para garantizar la máxima higiene"
+    
+  - name: "Limpieza de Pisos y Superficies"
+    description: "Soluciones para todo tipo de pisos y superficies comerciales"
+    
+  - name: "Productos Especializados"
+    description: "Químicos específicos para equipamiento gastronómico"
+    
+  - name: "Accesorios y Utensilios"
+    description: "Paños, esponjas, cepillos y herramientas de limpieza"
+
+# Catálogo
+catalog:
+  title: "Catálogo de Productos"
+  description: "Descargá nuestro catálogo completo con más de 200 productos especializados para limpieza profesional gastronómica."
+  pdf_file: "/assets/documents/CATALOGO FINAL.pdf"
+  file_size: "11 MB"
+  last_updated: "Diciembre 2024" 

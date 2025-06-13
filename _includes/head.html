@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- SEO Meta Tags -->
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="keywords" content="{{ site.keywords }}">
+<meta name="author" content="{{ site.author }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.data.site.company.name }}">
+<meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+
+<!-- Preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.data.site.company.name }}",
+  "description": "{{ site.data.site.company.description }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/images/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.data.site.contact.phone }}",
+    "email": "{{ site.data.site.contact.email }}",
+    "contactType": "customer service",
+    "areaServed": "AR",
+    "availableLanguage": "Spanish"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AR",
+    "addressLocality": "Buenos Aires",
+    "streetAddress": "{{ site.data.site.contact.address }}"
+  },
+  "sameAs": [
+    "{{ site.data.site.social.facebook }}",
+    "{{ site.data.site.social.instagram }}"
+  ]
+}
+</script>
+
+<!-- SEO Plugins -->
+{% seo %}
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Critical CSS inline for above-the-fold content -->
+<style>
+  /* Critical CSS will be inlined here for first paint optimization */
+  .hero { min-height: 100vh; display: flex; align-items: center; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+</style> 

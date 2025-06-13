@@ -1,0 +1,50 @@
+# Información principal de la empresa
+company:
+  name: "Almacén de Limpieza"
+  tagline: "Todo para la limpieza profesional"
+  description: "Somos una distribuidora especializada en productos de limpieza profesional, con más de una década sirviendo al sector gastronómico. Proveemos soluciones integrales de limpieza para restaurantes, bares, comedores y servicios de catering."
+
+# Misión, Visión y Valores sugeridos
+mission: "Proveer productos de limpieza de alta calidad que garanticen la máxima higiene y seguridad en establecimientos gastronómicos, contribuyendo al éxito de nuestros clientes a través de soluciones eficientes y confiables."
+
+vision: "Ser la distribuidora líder en productos de limpieza profesional para el sector gastronómico, reconocida por nuestra calidad, servicio y compromiso con la excelencia."
+
+values:
+  - title: "Calidad"
+    description: "Seleccionamos solo los mejores productos de marcas reconocidas"
+  - title: "Confiabilidad" 
+    description: "Cumplimos con nuestros compromisos de entrega y servicio"
+  - title: "Experiencia"
+    description: "Más de 10 años conociendo las necesidades del sector"
+  - title: "Proximidad"
+    description: "Atención personalizada y seguimiento continuo"
+
+# Hero section
+hero:
+  title: "Todo para la limpieza profesional"
+  subtitle: "Distribuidora especializada en productos de limpieza para gastronomía"
+  cta_text: "Ver catálogo"
+  cta_link: "#catalogo"
+  background_image: "/assets/images/15.jpeg"
+
+# Datos de contacto
+contact:
+  phone: "+54 11 1234-5678"  # Reemplazar con el teléfono real
+  email: "info@almacendelimpieza.com"  # Reemplazar con el email real
+  address: "Av. Principal 1234, Buenos Aires, Argentina"  # Reemplazar con la dirección real
+  hours: "Lunes a Viernes: 8:00 - 18:00 hs"
+
+# Redes sociales (para cuando las tengan)
+social:
+  instagram: ""  # @almacen_limpieza
+  facebook: ""   # /almacendelimpieza
+  whatsapp: ""   # +5411XXXXXXXX
+
+# Estadísticas destacadas
+stats:
+  - number: "500+"
+    text: "Clientes satisfechos"
+  - number: "10+"
+    text: "Años de experiencia"
+  - number: "24/7"
+    text: "Atención disponible" 

@@ -1,0 +1,16 @@
+# Carpeta de Documentos
+
+Esta carpeta debe contener:
+
+- `catalogo-almacen-limpieza.pdf` - Catálogo de productos en formato PDF
+
+El catálogo debe estar optimizado para web (tamaño recomendado < 5MB) y contener:
+
+- Portada con logo y datos de contacto
+- Índice de productos por categorías
+- Información detallada de cada producto
+- Precios (opcional)
+- Términos y condiciones
+- Datos de contacto en la última página
+
+Formato recomendado: PDF/A para mejor compatibilidad. 

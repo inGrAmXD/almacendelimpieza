@@ -1,0 +1,83 @@
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">{{ site.data.site.company.name }}</h3>
+        <p class="footer-description">{{ site.data.site.company.tagline }}</p>
+        <p class="footer-text">Distribuidora especializada en productos de limpieza profesional para el sector gastronómico.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Contacto</h4>
+        <ul class="footer-contact">
+          <li>
+            <span class="footer-contact-label">Dirección:</span>
+            <span>{{ site.data.site.contact.address }}</span>
+          </li>
+          <li>
+            <span class="footer-contact-label">Teléfono:</span>
+            <a href="tel:{{ site.data.site.contact.phone }}">{{ site.data.site.contact.phone }}</a>
+          </li>
+          <li>
+            <span class="footer-contact-label">Email:</span>
+            <a href="mailto:{{ site.data.site.contact.email }}">{{ site.data.site.contact.email }}</a>
+          </li>
+          <li>
+            <span class="footer-contact-label">Horarios:</span>
+            <span>{{ site.data.site.contact.hours }}</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Navegación</h4>
+        <ul class="footer-nav">
+          <li><a href="#nosotros">Sobre Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-subtitle">Síguenos</h4>
+        <div class="social-links">
+          {% if site.data.site.social.facebook != '' %}
+          <a href="{{ site.data.site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook" class="social-link social-link--facebook">
+            <span>Facebook</span>
+          </a>
+          {% endif %}
+          
+          {% if site.data.site.social.instagram != '' %}
+          <a href="{{ site.data.site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram" class="social-link social-link--instagram">
+            <span>Instagram</span>
+          </a>
+          {% endif %}
+          
+          {% if site.data.site.social.whatsapp != '' %}
+          <a href="https://wa.me/{{ site.data.site.social.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link social-link--whatsapp">
+            <span>WhatsApp</span>
+          </a>
+          {% endif %}
+        </div>
+        
+        <div class="newsletter">
+          <p>¿Querés recibir nuestras novedades?</p>
+          <a href="#contacto" class="btn btn-primary btn-sm">Suscribirse</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.site.company.name }}. Todos los derechos reservados.</p>
+      </div>
+      
+      <div class="footer-legal">
+        <a href="/politica-privacidad">Política de Privacidad</a>
+        <a href="/terminos-condiciones">Términos y Condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer> 

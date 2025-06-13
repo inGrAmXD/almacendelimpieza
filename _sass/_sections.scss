@@ -1,0 +1,1066 @@
+// About Section
+.about-section {
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-3xl;
+    
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+  
+  .mission-vision {
+    display: grid;
+    gap: $spacing-xl;
+    margin-top: $spacing-xl;
+    
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .mission, .vision {
+    padding: $spacing-lg;
+    background-color: $white;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-sm;
+    border-left: 4px solid $primary-color;
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.value-item {
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  .value-title {
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+// Services Section
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-4xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  text-align: center;
+  padding: $spacing-2xl $spacing-lg;
+  background-color: $white;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-sm;
+  transition: all $transition-normal;
+  border-left: 4px solid transparent;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+    border-left-color: $primary-color;
+  }
+  
+  &:nth-child(1) { border-top: 3px solid $primary-color; }
+  &:nth-child(2) { border-top: 3px solid $secondary-color; }
+  &:nth-child(3) { border-top: 3px solid $accent-color; }
+  
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto $spacing-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: $shadow-md;
+    
+    &::before {
+      content: '';
+      width: 32px;
+      height: 32px;
+      background: $white;
+      border-radius: 4px;
+    }
+    
+    // Icono de camión
+    &[data-icon="truck"]::before {
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+      background: $white;
+    }
+    
+    // Icono de escudo
+    &[data-icon="shield"]::before {
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      border-radius: 0;
+    }
+    
+    // Icono de reloj
+    &[data-icon="clock"]::before {
+      border-radius: 50%;
+      border: 3px solid $white;
+      background: transparent;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2px;
+        height: 12px;
+        background: $white;
+        transform: translate(-50%, -100%);
+        transform-origin: bottom;
+      }
+    }
+  }
+  
+  .service-title {
+    color: $gray-900;
+    margin-bottom: $spacing-md;
+  }
+  
+  .service-description {
+    color: $gray-600;
+    line-height: 1.6;
+  }
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+  
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sector-card {
+  background-color: $white;
+  border-radius: $border-radius-xl;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $shadow-lg;
+  }
+  
+  .sector-image {
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .sector-content {
+    padding: $spacing-xl;
+  }
+  
+  .sector-title {
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .sector-products {
+    list-style: none;
+    padding: 0;
+    margin-top: $spacing-md;
+    
+    li {
+      padding: $spacing-xs 0;
+      position: relative;
+      padding-left: $spacing-lg;
+      margin-bottom: $spacing-xs;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 6px;
+        height: 6px;
+        background: $secondary-color;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+// Iconos de sectores modernos
+.sector-icon-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  // Gradientes por sector
+  &[data-sector="1"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  &[data-sector="2"] {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  &[data-sector="3"] {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+  
+  &[data-sector="4"] {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+}
+
+.sector-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+  }
+  
+  // Icono de restaurante (tenedor y cuchillo)
+  &[data-icon="restaurant"] {
+    &::before {
+      width: 4px;
+      height: 60px;
+      left: 30px;
+      top: 10px;
+      background: white;
+    }
+    
+    &::after {
+      width: 20px;
+      height: 4px;
+      left: 22px;
+      top: 20px;
+      background: white;
+    }
+  }
+  
+  // Icono de copa de vino
+  &[data-icon="wine-glass"] {
+    &::before {
+      width: 30px;
+      height: 30px;
+      left: 25px;
+      top: 15px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      background: white;
+    }
+    
+    &::after {
+      width: 4px;
+      height: 35px;
+      left: 38px;
+      top: 35px;
+      background: white;
+    }
+  }
+  
+  // Icono de fábrica
+  &[data-icon="factory"] {
+    &::before {
+      width: 50px;
+      height: 35px;
+      left: 15px;
+      top: 30px;
+      background: white;
+    }
+    
+    &::after {
+      width: 8px;
+      height: 20px;
+      left: 35px;
+      top: 10px;
+      background: white;
+    }
+  }
+  
+  // Icono de catering (bandeja)
+  &[data-icon="catering"] {
+    &::before {
+      width: 50px;
+      height: 25px;
+      left: 15px;
+      top: 25px;
+      background: white;
+      border-radius: 25px 25px 8px 8px;
+    }
+    
+    &::after {
+      width: 30px;
+      height: 4px;
+      left: 25px;
+      top: 40px;
+      background: white;
+    }
+  }
+}
+
+// Efectos adicionales para los iconos
+.sector-icon-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.sector-card:hover .sector-icon-container::before {
+  opacity: 1;
+}
+
+// Catalog Section
+.catalog-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-3xl;
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.catalog-info {
+  text-align: center;
+  
+  @media (min-width: $breakpoint-lg) {
+    text-align: left;
+  }
+}
+
+.catalog-details {
+  background-color: $gray-100;
+  padding: $spacing-lg;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-xl;
+  
+  p {
+    margin-bottom: $spacing-sm;
+    color: $gray-700;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.catalog-actions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    justify-content: flex-start;
+  }
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.category-item {
+  padding: $spacing-lg;
+  background-color: $white;
+  border-radius: $border-radius-lg;
+  border: 1px solid $gray-200;
+  transition: all $transition-normal;
+  
+  &:hover {
+    border-color: $primary-color;
+    box-shadow: $shadow-sm;
+  }
+  
+  .category-name {
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+  }
+  
+  .category-description {
+    color: $gray-600;
+    margin-bottom: 0;
+  }
+}
+
+// Gallery Section - Video Epic con fotos flotantes
+.video-epic-section {
+  margin-bottom: $spacing-4xl;
+  padding: 0 $spacing-md;
+  
+  .video-main-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    border-radius: $border-radius-2xl;
+    overflow: hidden;
+    box-shadow: $shadow-xl;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    padding: 3px;
+    
+    @media (max-width: $breakpoint-md) {
+      aspect-ratio: 9/16;
+      max-height: 80vh;
+      padding: 2px;
+    }
+    
+    .main-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: $border-radius-2xl;
+      display: block;
+      filter: brightness(0.95) contrast(1.05) saturate(1.1);
+      transition: filter 0.3s ease;
+    }
+    
+    // Fotos flotantes que aparecen animadas
+    .floating-photos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      
+      .floating-photo {
+        position: absolute;
+        width: 120px;
+        height: 80px;
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.15),
+          0 0 0 1px rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transform: scale(0.8);
+        backdrop-filter: blur(1px);
+        
+        @media (max-width: $breakpoint-md) {
+          width: 80px;
+          height: 60px;
+        }
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.1) 100%
+          );
+          pointer-events: none;
+          z-index: 2;
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: 
+            brightness(1.05) 
+            contrast(1.08) 
+            saturate(1.15)
+            blur(0.2px);
+          transition: filter 0.3s ease;
+        }
+        
+        &.floating-photo-1 {
+          top: 10%;
+          left: 5%;
+          animation: floatIn 8s ease-in-out infinite;
+          animation-delay: 0s;
+        }
+        
+        &.floating-photo-2 {
+          top: 20%;
+          right: 8%;
+          animation: floatIn 8s ease-in-out infinite;
+          animation-delay: 2s;
+        }
+        
+        &.floating-photo-3 {
+          bottom: 25%;
+          left: 10%;
+          animation: floatIn 8s ease-in-out infinite;
+          animation-delay: 4s;
+        }
+        
+        &.floating-photo-4 {
+          bottom: 15%;
+          right: 5%;
+          animation: floatIn 8s ease-in-out infinite;
+          animation-delay: 6s;
+        }
+      }
+    }
+  }
+}
+
+// Animaciones épicas
+@keyframes floatIn {
+  0%, 85%, 100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px) rotate(-5deg);
+  }
+  15%, 70% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+// Carousel interactivo del depósito
+.depot-carousel {
+  margin-bottom: $spacing-4xl;
+  padding: 0 $spacing-md;
+  
+  .carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xl;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    h3 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-semibold;
+      color: $gray-900;
+      margin: 0;
+    }
+    
+    .carousel-controls {
+      display: flex;
+      gap: $spacing-sm;
+    }
+    
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid $primary-color;
+      background: $white;
+      color: $primary-color;
+      font-size: $font-size-xl;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all $transition-fast;
+      
+      &:hover {
+        background: $primary-color;
+        color: $white;
+        transform: scale(1.05);
+      }
+      
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        
+        &:hover {
+          background: $white;
+          color: $primary-color;
+          transform: none;
+        }
+      }
+    }
+  }
+  
+  .carousel-container {
+    overflow: hidden;
+    border-radius: $border-radius-xl;
+    box-shadow: $shadow-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: $white;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    position: relative;
+    aspect-ratio: 3/4; // Aspect ratio que favorece fotos verticales
+    
+    @media (min-width: $breakpoint-md) {
+      aspect-ratio: 16/9; // Más horizontal en desktop
+    }
+    
+         img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: center center;
+       
+       // Filtros mágicos para mejorar fotos de celular
+       filter: 
+         contrast(1.08) 
+         saturate(1.15) 
+         brightness(1.03) 
+         hue-rotate(2deg)
+         blur(0.3px);
+       
+       // Reducir blur al cargar
+       animation: imageEnhance 0.6s ease-out forwards;
+     }
+    
+    .slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba($black, 0.8));
+      color: $white;
+      padding: $spacing-xl $spacing-lg $spacing-lg;
+      transform: translateY(100%);
+      transition: transform $transition-normal;
+      
+      @media (max-width: $breakpoint-md) {
+        transform: translateY(0);
+        background: linear-gradient(transparent, rgba($black, 0.6));
+      }
+      
+      h4 {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-xs;
+        color: $white;
+      }
+      
+      p {
+        font-size: $font-size-sm;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+    
+    &:hover .slide-overlay {
+      transform: translateY(0);
+    }
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-top: $spacing-lg;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 $spacing-md;
+    
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background: $gray-300;
+      cursor: pointer;
+      transition: all $transition-fast;
+      
+      &.active,
+      &:hover {
+        background: $primary-color;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// Grid de fotos adicionales
+.photo-grid {
+  h3 {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-semibold;
+    color: $gray-900;
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-md;
+    
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+    }
+  }
+  
+  .grid-item {
+    position: relative;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    transition: all $transition-normal;
+    aspect-ratio: 3/4; // Favorece fotos verticales
+    
+    @media (min-width: $breakpoint-md) {
+      aspect-ratio: auto;
+    }
+    
+    // Layouts especiales para crear variedad visual
+    &.grid-tall {
+      @media (min-width: $breakpoint-md) {
+        grid-row: span 2;
+      }
+    }
+    
+    &.grid-wide {
+      @media (min-width: $breakpoint-md) {
+        grid-column: span 2;
+      }
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: all $transition-slow;
+      
+      // Filtros para mejorar fotos de celular
+      filter: contrast(1.03) saturate(1.05) brightness(1.01);
+    }
+    
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba($primary-color, 0.8) 0%,
+        rgba($secondary-color, 0.6) 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all $transition-normal;
+      
+      span {
+        color: $white;
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-sm;
+        text-align: center;
+        padding: 0 $spacing-md;
+        text-shadow: 0 2px 4px rgba($black, 0.3);
+      }
+    }
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-xl;
+             
+       img {
+         transform: scale(1.08) rotate(0.5deg);
+         filter: 
+           contrast(1.1) 
+           saturate(1.2) 
+           brightness(1.05) 
+           hue-rotate(3deg)
+           blur(0px);
+       }
+      
+      .grid-overlay {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Contact Section
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-3xl;
+  
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-details {
+  display: grid;
+  gap: $spacing-lg;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    border-radius: 50%;
+    background: $primary-color;
+    position: relative;
+    flex-shrink: 0;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: $white;
+    }
+    
+    // Icono de ubicación
+    &--location::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50% 50% 50% 0;
+      transform: translate(-50%, -60%) rotate(-45deg);
+    }
+    
+    // Icono de teléfono
+    &--phone::before {
+      width: 10px;
+      height: 10px;
+      border: 2px solid $white;
+      border-radius: 2px;
+      background: transparent;
+    }
+    
+    // Icono de email
+    &--email::before {
+      width: 10px;
+      height: 6px;
+      border: 1px solid $white;
+      border-radius: 1px;
+      background: transparent;
+    }
+    
+    &--email::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 1px;
+      background: $white;
+      transform: translate(-50%, -50%);
+    }
+    
+    // Icono de reloj
+    &--clock::before {
+      width: 10px;
+      height: 10px;
+      border: 2px solid $white;
+      border-radius: 50%;
+      background: transparent;
+    }
+    
+    &--clock::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 4px;
+      background: $white;
+      transform: translate(-50%, -100%);
+      transform-origin: bottom;
+    }
+  }
+  
+  .contact-text {
+    flex: 1;
+    
+    strong {
+      display: block;
+      color: $gray-900;
+      margin-bottom: $spacing-xs;
+    }
+    
+    p {
+      margin: 0;
+      color: $gray-700;
+    }
+    
+    a {
+      color: $primary-color;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// Contact Form
+.contact-form {
+  background-color: $white;
+  padding: $spacing-2xl;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-md;
+}
+
+.form-group {
+  margin-bottom: $spacing-lg;
+  
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-weight: $font-weight-medium;
+    color: $gray-900;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: $spacing-md;
+    border: 2px solid $gray-300;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    transition: border-color $transition-fast;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+    
+    &::placeholder {
+      color: $gray-500;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  cursor: pointer;
+  
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-top: 2px;
+    accent-color: $primary-color;
+    flex-shrink: 0;
+  }
+  
+  .checkbox-text {
+    font-size: $font-size-sm;
+    color: $gray-700;
+    line-height: 1.4;
+  }
+} 

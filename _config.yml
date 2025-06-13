@@ -1,0 +1,46 @@
+# Configuración del sitio
+title: "Almacén de Limpieza - Distribuidora de Productos de Limpieza Profesional"
+description: "Distribuidora líder en productos de limpieza profesional para gastronomía. Artículos de limpieza por mayor para restaurantes, bares, comedores y catering."
+url: "https://tudominio.com" # Cambiar por tu dominio
+baseurl: ""
+
+# SEO
+author: "Almacén de Limpieza"
+keywords: "distribuidora productos limpieza, limpieza profesional gastronómica, productos limpieza por mayor, artículos limpieza restaurantes, limpieza industrial, productos químicos profesionales"
+
+# Configuración de Jekyll
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: America/Argentina/Buenos_Aires
+
+# Plugins para SEO
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Configuración de SEO
+twitter:
+  username: almacen_limpieza # Cambiar cuando tengan redes
+
+facebook:
+  app_id: # Agregar cuando tengan Facebook
+  publisher: # Agregar cuando tengan Facebook
+
+# Schema.org
+social:
+  name: Almacén de Limpieza
+  links:
+    - https://www.instagram.com/almacen_limpieza # Agregar cuando tengan
+    - https://www.facebook.com/almacen_limpieza # Agregar cuando tengan
+
+# Configuración local
+locale: es_AR
+
+# Exclusiones
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/ 

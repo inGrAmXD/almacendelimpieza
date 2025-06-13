@@ -1,0 +1,60 @@
+<!-- JavaScript -->
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+
+<!-- Google Analytics (reemplazar con tu ID) -->
+<!-- 
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+-->
+
+<!-- Schema.org adicional para Local Business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ site.data.site.company.name }}",
+  "image": "{{ site.url }}/assets/images/logo.png",
+  "description": "{{ site.data.site.company.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.data.site.contact.address }}",
+    "addressLocality": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "telephone": "{{ site.data.site.contact.phone }}",
+  "email": "{{ site.data.site.contact.email }}",
+  "url": "{{ site.url }}",
+  "openingHours": "Mo-Fr 08:00-18:00",
+  "priceRange": "$$",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.6118,
+      "longitude": -58.3960
+    },
+    "geoRadius": "50000"
+  }
+}
+</script>
+
+<!-- Lazy loading para imágenes -->
+<script>
+  // Lazy loading nativo con fallback
+  if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    images.forEach(img => {
+      img.src = img.dataset.src;
+    });
+  } else {
+    // Cargar polyfill para navegadores que no soportan lazy loading
+    const script = document.createElement('script');
+    script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
+    document.head.appendChild(script);
+  }
+</script> 

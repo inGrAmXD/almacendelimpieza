@@ -1,0 +1,380 @@
+---
+layout: default
+title: "Inicio"
+description: "Distribuidora líder en productos de limpieza profesional para gastronomía. Artículos de limpieza por mayor para restaurantes, bares, comedores y catering."
+---
+
+<!-- Hero Section -->
+<section id="inicio" class="hero">
+  <div class="hero-background" style="background-image: url('{{ site.data.site.hero.background_image }}');">
+    <div class="hero-overlay"></div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.data.site.hero.title }}</h1>
+      <p class="hero-subtitle">{{ site.data.site.hero.subtitle }}</p>
+      <p class="hero-description">Más de 10 años distribuyendo productos de limpieza profesional para el sector gastronómico en Buenos Aires y alrededores.</p>
+      
+      <div class="hero-actions">
+        <a href="{{ site.data.site.hero.cta_link }}" class="btn btn-primary btn-lg">
+          {{ site.data.site.hero.cta_text }}
+        </a>
+        <a href="#contacto" class="btn btn-outline btn-lg">
+          Contactanos
+        </a>
+      </div>
+      
+      <div class="hero-stats">
+        {% for stat in site.data.site.stats %}
+        <div class="stat-item">
+          <span class="stat-number">{{ stat.number }}</span>
+          <span class="stat-text">{{ stat.text }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <!-- Indicador de scroll -->
+    <div class="hero-scroll">
+              <a href="#nosotros" class="scroll-indicator">
+          <span class="scroll-text">Descubrí más</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre Nosotros Section -->
+<section id="nosotros" class="about-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sobre Nosotros</h2>
+      <p class="section-subtitle">{{ site.data.site.company.description }}</p>
+    </div>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Nuestra Historia</h3>
+        <p>{{ site.data.site.company.name }} nació de la necesidad de brindar soluciones especializadas de limpieza al sector gastronómico. Con más de una década en el mercado, nos hemos consolidado como el proveedor de confianza para restaurantes, bares, comedores y servicios de catering.</p>
+        
+        <div class="mission-vision">
+          <div class="mission">
+            <h4>Nuestra Misión</h4>
+            <p>{{ site.data.site.mission }}</p>
+          </div>
+          
+          <div class="vision">
+            <h4>Nuestra Visión</h4>
+            <p>{{ site.data.site.vision }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-values">
+        <h3>Nuestros Valores</h3>
+        <div class="values-grid">
+          {% for value in site.data.site.values %}
+          <div class="value-item">
+            <h4 class="value-title">{{ value.title }}</h4>
+            <p class="value-description">{{ value.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios Section -->
+<section id="servicios" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-subtitle">Soluciones integrales para la limpieza profesional gastronómica</p>
+    </div>
+    
+    <div class="services-grid">
+      {% for service in site.data.services.services %}
+      <div class="service-card">
+        <div class="service-icon" data-icon="{{ service.icon }}"></div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Sectores que atendemos -->
+    <div class="sectors-section">
+      <h3 class="subsection-title">Sectores que Atendemos</h3>
+      <div class="sectors-grid">
+        {% for sector in site.data.services.sectors %}
+        <div class="sector-card">
+          <div class="sector-icon-container" data-sector="{{ forloop.index }}">
+            <div class="sector-icon" data-icon="{{ sector.icon }}"></div>
+          </div>
+          <div class="sector-content">
+            <h4 class="sector-title">{{ sector.title }}</h4>
+            <p class="sector-description">{{ sector.description }}</p>
+            <ul class="sector-products">
+              {% for product in sector.products %}
+              <li>{{ product }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Catálogo Section -->
+<section id="catalogo" class="catalog-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ site.data.services.catalog.title }}</h2>
+      <p class="section-subtitle">{{ site.data.services.catalog.description }}</p>
+    </div>
+    
+    <div class="catalog-content">
+      <div class="catalog-info">
+        <div class="catalog-details">
+          <p><strong>Tamaño del archivo:</strong> {{ site.data.services.catalog.file_size }}</p>
+          <p><strong>Última actualización:</strong> {{ site.data.services.catalog.last_updated }}</p>
+        </div>
+        
+        <div class="catalog-actions">
+          <a href="{{ site.data.services.catalog.pdf_file }}" class="btn btn-primary btn-lg" download>
+            Descargar Catálogo
+          </a>
+          <a href="{{ site.data.services.catalog.pdf_file }}" target="_blank" class="btn btn-outline btn-lg">
+            Ver Online
+          </a>
+        </div>
+      </div>
+      
+      <div class="product-categories">
+        <h3>Categorías de Productos</h3>
+        <div class="categories-grid">
+          {% for category in site.data.services.product_categories %}
+          <div class="category-item">
+            <h4 class="category-name">{{ category.name }}</h4>
+            <p class="category-description">{{ category.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galería Section -->
+<section id="galeria" class="gallery-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">🏭 Conocé Nuestro Depósito</h2>
+      <p class="section-subtitle">Un recorrido visual por el corazón de nuestra operación diaria</p>
+    </div>
+    
+    <!-- Video Hero ÉPICO con fusion de fotos -->
+    <div class="video-epic-section">
+      <div class="video-main-container">
+        <video autoplay muted loop playsinline class="main-video">
+          <source src="/assets/images/2.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+        
+        <!-- Fotos flotantes que aparecen y desaparecen -->
+        <div class="floating-photos">
+          <div class="floating-photo floating-photo-1">
+            <img src="/assets/images/1.jpeg" alt="Depósito vista 1">
+          </div>
+          <div class="floating-photo floating-photo-2">
+            <img src="/assets/images/3.jpeg" alt="Depósito vista 2">
+          </div>
+          <div class="floating-photo floating-photo-3">
+            <img src="/assets/images/5.jpeg" alt="Depósito vista 3">
+          </div>
+          <div class="floating-photo floating-photo-4">
+            <img src="/assets/images/7.jpeg" alt="Depósito vista 4">
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+    <!-- Carousel interactivo del depósito -->
+    <div class="depot-carousel">
+      <div class="carousel-header">
+        <h3>Recorrido por Nuestro Depósito</h3>
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn carousel-next" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+      
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="/assets/images/1.jpeg" alt="Vista del depósito principal">
+            <div class="slide-overlay">
+              <h4>Entrada Principal</h4>
+              <p>Vista general de nuestro depósito organizado</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/images/4.jpeg" alt="Área de almacenamiento">
+            <div class="slide-overlay">
+              <h4>Zona de Almacenamiento</h4>
+              <p>Productos organizados para fácil acceso</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/images/6.jpeg" alt="Pasillos del depósito">
+            <div class="slide-overlay">
+              <h4>Pasillos de Trabajo</h4>
+              <p>Espacios amplios para operación eficiente</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/images/8.jpeg" alt="Vista lateral del depósito">
+            <div class="slide-overlay">
+              <h4>Vista Lateral</h4>
+              <p>Perspectiva completa de nuestras instalaciones</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/images/10.jpeg" alt="Área de trabajo">
+            <div class="slide-overlay">
+              <h4>Zona Operativa</h4>
+              <p>Donde preparamos cada pedido con cuidado</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="/assets/images/12.jpeg" alt="Vista panorámica">
+            <div class="slide-overlay">
+              <h4>Vista Panorámica</h4>
+              <p>La magnitud de nuestro espacio de trabajo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+        <button class="indicator" data-slide="5"></button>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- Contacto Section -->
+<section id="contacto" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Contactanos</h2>
+      <p class="section-subtitle">Estamos aquí para ayudarte con todas tus necesidades de limpieza profesional</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Información de Contacto</h3>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon contact-icon--location"></div>
+            <div class="contact-text">
+              <strong>Dirección</strong>
+              <p>{{ site.data.site.contact.address }}</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon contact-icon--phone"></div>
+            <div class="contact-text">
+              <strong>Teléfono</strong>
+              <p><a href="tel:{{ site.data.site.contact.phone }}">{{ site.data.site.contact.phone }}</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon contact-icon--email"></div>
+            <div class="contact-text">
+              <strong>Email</strong>
+              <p><a href="mailto:{{ site.data.site.contact.email }}">{{ site.data.site.contact.email }}</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon contact-icon--clock"></div>
+            <div class="contact-text">
+              <strong>Horarios</strong>
+              <p>{{ site.data.site.contact.hours }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h3>Envianos tu Consulta</h3>
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre completo *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Empresa</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Mensaje *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Contanos sobre tu negocio y qué productos necesitás..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter" id="newsletter">
+              <span class="checkbox-text">Quiero recibir novedades y ofertas especiales</span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg">Enviar Consulta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonios Section (preparado para el futuro) -->
+<section id="testimonios" class="testimonials-section" style="display: none;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Lo que Dicen Nuestros Clientes</h2>
+      <p class="section-subtitle">La confianza de nuestros clientes es nuestro mejor aval</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      <!-- Los testimonios se agregarán aquí cuando estén disponibles -->
+    </div>
+  </div>
+</section> 

@@ -1,0 +1,38 @@
+# Carpeta de Imágenes
+
+Esta carpeta debe contener las siguientes imágenes:
+
+## Imágenes requeridas:
+
+- `logo.png` - Logo de la empresa (recomendado: 200x60px)
+- `hero-deposito.jpg` - Imagen de fondo para la sección hero (recomendado: 1920x1080px)
+- `og-image.jpg` - Imagen para redes sociales (obligatorio: 1200x630px)
+- `favicon.ico` - Favicon del sitio (32x32px)
+- `apple-touch-icon.png` - Icono para iOS (180x180px)
+
+## Imágenes del depósito:
+
+- `deposito-1.jpg` - Vista general del depósito
+- `deposito-2.jpg` - Área de almacenamiento
+- `deposito-3.jpg` - Productos organizados
+
+## Imágenes de productos:
+
+- `productos-1.jpg` - Detergentes profesionales
+- `productos-2.jpg` - Desinfectantes
+- `productos-3.jpg` - Accesorios de limpieza
+
+## Imágenes de sectores:
+
+- `restaurante.jpg` - Imagen representativa de restaurantes
+- `bar.jpg` - Imagen representativa de bares
+- `comedor.jpg` - Imagen representativa de comedores
+- `catering.jpg` - Imagen representativa de catering
+
+## Video:
+
+En la carpeta `/assets/videos/`:
+- `deposito-tour.mp4` - Video recorrido del depósito
+- `video-poster.jpg` - Imagen de portada del video
+
+Todas las imágenes deben estar optimizadas para web (formato JPG/PNG, tamaño < 500KB por imagen). 

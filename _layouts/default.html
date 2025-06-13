@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/Organization">
+<head>
+  {% include head.html %}
+  </head>
+  <body class="loading">
+    <!-- 🚀 Epic Loading Screen -->
+    <div class="epic-loader">
+      <div class="loader-content">
+        <div class="loader-logo">ALMACÉN DE LIMPIEZA</div>
+        <div class="loader-text">Preparando tu experiencia...</div>
+        <div class="loader-spinner"></div>
+      </div>
+    </div>
+    
+    {% include header.html %}
+  
+  <main role="main">
+    {{ content }}
+  </main>
+  
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+</html> 
