@@ -71,6 +71,6 @@ product_categories:
 catalog:
   title: "Catálogo de Productos"
   description: "Descargá nuestro catálogo completo con más de 200 productos especializados para limpieza profesional gastronómica."
-  pdf_file: "/assets/documents/CATALOGO FINAL.pdf"
+  pdf_file: "{{ site.baseurl }}/assets/documents/CATALOGO FINAL.pdf"
   file_size: "11 MB"
   last_updated: "Diciembre 2024" 
