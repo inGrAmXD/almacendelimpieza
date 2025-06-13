@@ -1,8 +1,8 @@
 # Configuración del sitio
 title: "Almacén de Limpieza - Distribuidora de Productos de Limpieza Profesional"
 description: "Distribuidora líder en productos de limpieza profesional para gastronomía. Artículos de limpieza por mayor para restaurantes, bares, comedores y catering."
-url: "https://tudominio.com" # Cambiar por tu dominio
-baseurl: ""
+url: "https://ingramxd.github.io"
+baseurl: "/almacendelimpieza"
 
 # SEO
 author: "Almacén de Limpieza"

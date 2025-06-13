@@ -14,21 +14,21 @@
 <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:site_name" content="{{ site.data.site.company.name }}">
-<meta property="og:image" content="{{ site.url }}/assets/images/og-image.jpg">
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.jpg">
 <meta property="og:locale" content="es_AR">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-<meta name="twitter:image" content="{{ site.url }}/assets/images/og-image.jpg">
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/og-image.jpg">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/images/apple-touch-icon.png">
 
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
   "name": "{{ site.data.site.company.name }}",
   "description": "{{ site.data.site.company.description }}",
   "url": "{{ site.url }}",
-  "logo": "{{ site.url }}/assets/images/logo.png",
+  "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "{{ site.data.site.contact.phone }}",
