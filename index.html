@@ -129,45 +129,7 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
   </div>
 </section>
 
-<!-- Catálogo Section -->
-<section id="catalogo" class="catalog-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">{{ site.data.services.catalog.title }}</h2>
-      <p class="section-subtitle">{{ site.data.services.catalog.description }}</p>
-    </div>
-    
-    <div class="catalog-content">
-      <div class="catalog-info">
-        <div class="catalog-details">
-          <p><strong>Tamaño del archivo:</strong> {{ site.data.services.catalog.file_size }}</p>
-          <p><strong>Última actualización:</strong> {{ site.data.services.catalog.last_updated }}</p>
-        </div>
-        
-        <div class="catalog-actions">
-          <a href="{{ site.data.services.catalog.pdf_file }}" class="btn btn-primary btn-lg" download>
-            Descargar Catálogo
-          </a>
-          <a href="{{ site.data.services.catalog.pdf_file }}" target="_blank" class="btn btn-outline btn-lg">
-            Ver Online
-          </a>
-        </div>
-      </div>
-      
-      <div class="product-categories">
-        <h3>Categorías de Productos</h3>
-        <div class="categories-grid">
-          {% for category in site.data.services.product_categories %}
-          <div class="category-item">
-            <h4 class="category-name">{{ category.name }}</h4>
-            <p class="category-description">{{ category.description }}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- Galería Section -->
 <section id="galeria" class="gallery-section">
@@ -181,23 +143,23 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
     <div class="video-epic-section">
       <div class="video-main-container">
         <video autoplay muted loop playsinline class="main-video">
-          <source src="{{ site.baseurl }}/assets/images/2.mp4" type="video/mp4">
+          <source src="/assets/images/2.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
         
         <!-- Fotos flotantes que aparecen y desaparecen -->
         <div class="floating-photos">
           <div class="floating-photo floating-photo-1">
-            <img src="{{ site.baseurl }}/assets/images/1.jpeg" alt="Depósito vista 1">
+            <img src="/assets/images/1.jpeg" alt="Depósito vista 1">
           </div>
           <div class="floating-photo floating-photo-2">
-            <img src="{{ site.baseurl }}/assets/images/3.jpeg" alt="Depósito vista 2">
+            <img src="/assets/images/3.jpeg" alt="Depósito vista 2">
           </div>
           <div class="floating-photo floating-photo-3">
-            <img src="{{ site.baseurl }}/assets/images/5.jpeg" alt="Depósito vista 3">
+            <img src="/assets/images/5.jpeg" alt="Depósito vista 3">
           </div>
           <div class="floating-photo floating-photo-4">
-            <img src="{{ site.baseurl }}/assets/images/7.jpeg" alt="Depósito vista 4">
+            <img src="/assets/images/7.jpeg" alt="Depósito vista 4">
           </div>
         </div>
         
@@ -218,42 +180,42 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
       <div class="carousel-container">
         <div class="carousel-track">
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/1.jpeg" alt="Vista del depósito principal">
+            <img src="/assets/images/1.jpeg" alt="Vista del depósito principal">
             <div class="slide-overlay">
               <h4>Entrada Principal</h4>
               <p>Vista general de nuestro depósito organizado</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/4.jpeg" alt="Área de almacenamiento">
+            <img src="/assets/images/4.jpeg" alt="Área de almacenamiento">
             <div class="slide-overlay">
               <h4>Zona de Almacenamiento</h4>
               <p>Productos organizados para fácil acceso</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/6.jpeg" alt="Pasillos del depósito">
+            <img src="/assets/images/6.jpeg" alt="Pasillos del depósito">
             <div class="slide-overlay">
               <h4>Pasillos de Trabajo</h4>
               <p>Espacios amplios para operación eficiente</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/8.jpeg" alt="Vista lateral del depósito">
+            <img src="/assets/images/8.jpeg" alt="Vista lateral del depósito">
             <div class="slide-overlay">
               <h4>Vista Lateral</h4>
               <p>Perspectiva completa de nuestras instalaciones</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/10.jpeg" alt="Área de trabajo">
+            <img src="/assets/images/10.jpeg" alt="Área de trabajo">
             <div class="slide-overlay">
               <h4>Zona Operativa</h4>
               <p>Donde preparamos cada pedido con cuidado</p>
             </div>
           </div>
           <div class="carousel-slide">
-            <img src="{{ site.baseurl }}/assets/images/12.jpeg" alt="Vista panorámica">
+            <img src="/assets/images/12.jpeg" alt="Vista panorámica">
             <div class="slide-overlay">
               <h4>Vista Panorámica</h4>
               <p>La magnitud de nuestro espacio de trabajo</p>
@@ -325,15 +287,22 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
       
       <div class="contact-form-container">
         <h3>Envianos tu Consulta</h3>
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <p>Completá el formulario y te contactamos a la brevedad para ofrecerte la mejor solución para tu negocio.</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" accept-charset="UTF-8">
+          <!-- Campo oculto para identificar el origen -->
+          <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web - Almacén de Limpieza">
+          <input type="hidden" name="_next" value="#contacto">
+          <input type="hidden" name="_captcha" value="false">
+          
           <div class="form-group">
             <label for="name">Nombre completo *</label>
             <input type="text" id="name" name="name" required>
           </div>
           
           <div class="form-group">
-            <label for="company">Empresa</label>
-            <input type="text" id="company" name="company">
+            <label for="company">Empresa / Negocio</label>
+            <input type="text" id="company" name="company" placeholder="Ej: Restaurante Los Amigos">
           </div>
           
           <div class="form-group">
@@ -343,22 +312,42 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
           
           <div class="form-group">
             <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone">
+            <input type="tel" id="phone" name="phone" placeholder="Ej: +54 9 11 1234-5678">
+          </div>
+          
+          <div class="form-group">
+            <label for="business_type">Tipo de negocio</label>
+            <select id="business_type" name="business_type">
+              <option value="">Seleccioná tu rubro</option>
+              <option value="restaurante">Restaurante</option>
+              <option value="bar">Bar / Pub</option>
+              <option value="hotel">Hotel / Hostería</option>
+              <option value="colegio">Colegio / Instituto</option>
+              <option value="centro_medico">Centro Médico / Clínica</option>
+              <option value="residencia">Residencia Geriátrica</option>
+              <option value="empresa">Empresa / Oficina</option>
+              <option value="cadena">Cadena Gastronómica</option>
+              <option value="otro">Otro</option>
+            </select>
           </div>
           
           <div class="form-group">
             <label for="message">Mensaje *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Contanos sobre tu negocio y qué productos necesitás..."></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Contanos sobre tu negocio y qué productos de limpieza necesitás. Por ejemplo: cantidad de empleados, tipo de cocina, productos específicos que buscás, etc."></textarea>
           </div>
           
           <div class="form-group">
             <label class="checkbox-label">
-              <input type="checkbox" name="newsletter" id="newsletter">
+              <input type="checkbox" name="newsletter" id="newsletter" value="si">
               <span class="checkbox-text">Quiero recibir novedades y ofertas especiales</span>
             </label>
           </div>
           
           <button type="submit" class="btn btn-primary btn-lg">Enviar Consulta</button>
+          
+          <p class="form-footer">
+            <small>* Campos obligatorios. Nos contactaremos contigo dentro de las 24 horas.</small>
+          </p>
         </form>
       </div>
     </div>

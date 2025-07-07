@@ -1,9 +1,9 @@
 // Colores principales
-$primary-color: #2563eb;      // Azul profesional
-$primary-dark: #1d4ed8;       // Azul oscuro
-$primary-light: #60a5fa;      // Azul claro
-$secondary-color: #10b981;    // Verde éxito
-$accent-color: #f59e0b;       // Amarillo/naranja acento
+$primary-color: #FFD700;      // Amarillo principal
+$primary-dark: #FFA500;       // Amarillo oscuro/naranja
+$primary-light: #FFFF99;      // Amarillo claro
+$secondary-color: #000000;    // Negro
+$accent-color: #FFED4E;       // Amarillo vibrante
 
 // Colores neutros
 $white: #ffffff;
@@ -20,10 +20,10 @@ $gray-900: #0f172a;
 $black: #000000;
 
 // Colores de estado
-$success: #10b981;
-$warning: #f59e0b;
-$error: #ef4444;
-$info: #3b82f6;
+$success: #FFD700;
+$warning: #FFA500;
+$error: #000000;
+$info: #FFED4E;
 
 // Tipografía
 $font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

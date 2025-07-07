@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Reset básico
 *,
 *::before,
@@ -107,27 +109,21 @@ li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: $spacing-sm;
   padding: $spacing-sm $spacing-lg;
+  font-family: $font-family-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 1;
   text-decoration: none;
-  border: 1px solid transparent;
-  border-radius: $border-radius-lg;
+  border: 2px solid transparent;
+  border-radius: $border-radius-md;
   cursor: pointer;
-  transition: all $transition-fast;
-  white-space: nowrap;
+  transition: all $transition-normal;
+  gap: $spacing-sm;
   
   &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
-  }
-  
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
   }
   
   // Tamaños
@@ -141,42 +137,105 @@ li {
     font-size: $font-size-lg;
   }
   
-  // Variantes
+  // Estilos primarios
   &.btn-primary {
-    color: $white;
     background-color: $primary-color;
+    color: $black;
     border-color: $primary-color;
     
     &:hover {
       background-color: $primary-dark;
       border-color: $primary-dark;
-      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
     }
   }
   
   &.btn-outline {
-    color: $white;
     background-color: transparent;
-    border-color: rgba($white, 0.8);
-    border-width: 2px;
+    color: $primary-color;
+    border-color: $primary-color;
     
     &:hover {
-      color: $gray-900;
-      background-color: $white;
-      border-color: $white;
-      text-decoration: none;
+      background-color: $primary-color;
+      color: $black;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
     }
   }
   
-  &.btn-secondary {
+  // Botón especial de WhatsApp
+  &.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
     color: $white;
-    background-color: $secondary-color;
-    border-color: $secondary-color;
+    border-color: #25D366;
+    font-weight: $font-weight-semibold;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius-lg;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    
+    .whatsapp-icon {
+      font-size: $font-size-lg;
+      margin-right: $spacing-xs;
+    }
     
     &:hover {
-      background-color: darken($secondary-color, 10%);
-      border-color: darken($secondary-color, 10%);
-      text-decoration: none;
+      background: linear-gradient(135deg, #20BA5A 0%, #1DA851 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+  }
+}
+
+// Contenedor del botón WhatsApp
+.whatsapp-cta {
+  margin-top: $spacing-lg;
+  
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+    
+    @media (min-width: $breakpoint-sm) {
+      width: auto;
+    }
+  }
+}
+
+// 🚀 BOTÓN WHATSAPP FLOTANTE SIMPLE
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+  
+  // Solo en móviles
+  @media (max-width: $breakpoint-md) {
+    display: block;
+  }
+  
+  .whatsapp-float-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+    }
+    
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
     }
   }
 }
@@ -368,7 +427,7 @@ img[src*="deposito"], img[src*="productos"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  background: $black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,13 +439,49 @@ img[src*="deposito"], img[src*="productos"] {
     
     .loader-logo {
       font-family: $font-family-heading;
-      font-size: $font-size-3xl;
+      font-size: $font-size-4xl;
       font-weight: 800;
       margin-bottom: $spacing-lg;
+      color: $primary-color;
+      text-shadow: 0 0 20px rgba($primary-color, 0.3);
       animation: logoGlow 2s ease-in-out infinite alternate;
+      position: relative;
+      
+      // Líneas decorativas
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 60px;
+        height: 2px;
+        background: $primary-color;
+        box-shadow: 0 0 10px rgba($primary-color, 0.5);
+      }
+      
+      &::before {
+        left: -80px;
+      }
+      
+      &::after {
+        right: -80px;
+      }
       
       @media (max-width: $breakpoint-md) {
-        font-size: $font-size-2xl;
+        font-size: $font-size-3xl;
+        
+        &::before,
+        &::after {
+          width: 40px;
+        }
+        
+        &::before {
+          left: -60px;
+        }
+        
+        &::after {
+          right: -60px;
+        }
       }
     }
     
@@ -394,6 +489,7 @@ img[src*="deposito"], img[src*="productos"] {
       font-size: $font-size-lg;
       margin-bottom: $spacing-xl;
       opacity: 0.9;
+      color: rgba($white, 0.8);
       
       @media (max-width: $breakpoint-md) {
         font-size: $font-size-base;
@@ -403,23 +499,24 @@ img[src*="deposito"], img[src*="productos"] {
     .loader-spinner {
       width: 60px;
       height: 60px;
-      border: 4px solid rgba($white, 0.3);
-      border-top: 4px solid $white;
+      border: 4px solid rgba($primary-color, 0.2);
+      border-top: 4px solid $primary-color;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 0 auto;
+      box-shadow: 0 0 20px rgba($primary-color, 0.3);
     }
   }
 }
 
 @keyframes logoGlow {
   0% {
-    text-shadow: 0 0 20px rgba($white, 0.5);
+    text-shadow: 0 0 20px rgba($primary-color, 0.3);
     transform: scale(1);
   }
   100% {
-    text-shadow: 0 0 40px rgba($white, 0.8);
-    transform: scale(1.05);
+    text-shadow: 0 0 30px rgba($primary-color, 0.6), 0 0 40px rgba($primary-color, 0.3);
+    transform: scale(1.02);
   }
 }
 

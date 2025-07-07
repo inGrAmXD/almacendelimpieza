@@ -634,6 +634,33 @@ class GalleryAnimations {
   }
 }
 
+// 🚀 Botón WhatsApp Flotante Simple
+class WhatsAppFloatButton {
+  constructor() {
+    this.floatButton = document.querySelector('.whatsapp-float');
+    
+    this.init();
+  }
+  
+  init() {
+    if (!this.floatButton) return;
+    
+    // Ya está visible por CSS en mobile, solo agregamos el efecto de click
+    this.floatButton.addEventListener('click', () => this.handleClick());
+  }
+  
+  handleClick() {
+    // Efecto de click simple
+    const button = this.floatButton.querySelector('.whatsapp-float-btn');
+    
+    button.style.transform = 'scale(0.9)';
+    
+    setTimeout(() => {
+      button.style.transform = '';
+    }, 150);
+  }
+}
+
 // Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   // 🚀 Inicializar loading screen épico
@@ -652,6 +679,9 @@ document.addEventListener('DOMContentLoaded', () => {
   new DepotCarousel();
   new EpicVideoSection();
   new GalleryAnimations();
+  
+  // 🚀 Botón WhatsApp flotante simple
+  new WhatsAppFloatButton();
 });
 
 // 🚀 Epic Loading Manager

@@ -1,12 +1,12 @@
 # Configuración del sitio
 title: "Almacén de Limpieza - Distribuidora de Productos de Limpieza Profesional"
-description: "Distribuidora líder en productos de limpieza profesional para gastronomía. Artículos de limpieza por mayor para restaurantes, bares, comedores y catering."
-url: "https://almacendelimpieza.com"
+description: "Distribuidora especializada en productos de limpieza profesional. Vendemos a comercios gastronómicos & brindamos asesoramiento personalizado a cadenas gastronómicas y centros de producción alimenticias. Atendemos hotelería, colegios, residencias geriátricas, centros médicos y empresas."
+url: "https://tudominio.com" # Cambiar por tu dominio
 baseurl: ""
 
 # SEO
 author: "Almacén de Limpieza"
-keywords: "distribuidora productos limpieza, limpieza profesional gastronómica, productos limpieza por mayor, artículos limpieza restaurantes, limpieza industrial, productos químicos profesionales"
+keywords: "distribuidora productos limpieza, limpieza profesional gastronómica, productos limpieza por mayor, artículos limpieza restaurantes, limpieza industrial, productos químicos profesionales, hotelería, colegios, residencias geriátricas, centros médicos"
 
 # Configuración de Jekyll
 markdown: kramdown

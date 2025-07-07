@@ -12,10 +12,10 @@ services:
     description: "Sistema de entregas regulares para garantizar que nunca te quedes sin stock."
     icon: "clock"
 
-# Rubros que atienden (sector gastronómico)
+# Rubros que atienden
 sectors:
-  - title: "Restaurantes"
-    description: "Productos especializados para cocinas profesionales, comedores y áreas de atención al público."
+  - title: "Comercios Gastronómicos"
+    description: "Productos especializados para restaurantes, bares, comedores y todo tipo de establecimientos gastronómicos."
     icon: "restaurant"
     products:
       - "Desengrasantes industriales"
@@ -23,32 +23,50 @@ sectors:
       - "Sanitizantes de superficies"
       - "Productos para pisos de alto tránsito"
       
-  - title: "Bares y Pubs"
-    description: "Soluciones de limpieza para barras, cristalería y espacios de entretenimiento."
-    icon: "wine-glass"
-    products:
-      - "Limpiadores de cristal"
-      - "Desinfectantes para barras"
-      - "Productos para acero inoxidable"
-      - "Ambientadores profesionales"
-      
-  - title: "Comedores Industriales"
-    description: "Productos de alto rendimiento para grandes volúmenes y uso intensivo."
+  - title: "Cadenas Gastronómicas"
+    description: "Asesoramiento personalizado para cadenas gastronómicas y centros de producción alimenticias."
     icon: "factory"
     products:
-      - "Desinfectantes de gran formato"
-      - "Detergentes concentrados"
-      - "Productos para equipamiento industrial"
       - "Sistemas de limpieza automática"
+      - "Productos de gran formato"
+      - "Soluciones industriales"
+      - "Asesoramiento técnico especializado"
       
-  - title: "Catering y Eventos"
-    description: "Soluciones portables y eficientes para servicios móviles y eventos especiales."
-    icon: "catering"
+  - title: "Hotelería"
+    description: "Soluciones integrales de limpieza para hoteles, hostales y establecimientos de alojamiento."
+    icon: "hotel"
     products:
-      - "Productos de limpieza portables"
-      - "Sanitizantes de acción rápida"
-      - "Toallas y paños profesionales"
+      - "Productos para habitaciones"
+      - "Limpieza de baños y sanitarios"
+      - "Ambientadores profesionales"
+      - "Productos para áreas comunes"
+      
+  - title: "Colegios e Instituciones"
+    description: "Productos seguros y efectivos para centros educativos y espacios con alta concurrencia."
+    icon: "school"
+    products:
+      - "Desinfectantes certificados"
+      - "Productos seguros para niños"
+      - "Limpieza de aulas y comedores"
       - "Sistemas de higiene personal"
+      
+  - title: "Centros Médicos"
+    description: "Productos especializados para residencias geriátricas, clínicas y centros de salud."
+    icon: "medical"
+    products:
+      - "Desinfectantes hospitalarios"
+      - "Productos bactericidas"
+      - "Limpieza de equipamiento médico"
+      - "Soluciones de alta bioseguridad"
+      
+  - title: "Empresas en General"
+    description: "Atención personalizada para oficinas, industrias y todo tipo de empresas."
+    icon: "building"
+    products:
+      - "Productos para oficinas"
+      - "Limpieza industrial"
+      - "Mantenimiento de instalaciones"
+      - "Soluciones corporativas"
 
 # Categorías de productos
 product_categories:
@@ -67,10 +85,4 @@ product_categories:
   - name: "Accesorios y Utensilios"
     description: "Paños, esponjas, cepillos y herramientas de limpieza"
 
-# Catálogo
-catalog:
-  title: "Catálogo de Productos"
-  description: "Descargá nuestro catálogo completo con más de 200 productos especializados para limpieza profesional gastronómica."
-  pdf_file: "/assets/documents/CATALOGO FINAL.pdf"
-  file_size: "11 MB"
-  last_updated: "Diciembre 2024" 
+ 
