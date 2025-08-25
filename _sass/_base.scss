@@ -201,17 +201,52 @@ li {
   }
 }
 
-// 🚀 BOTÓN WHATSAPP FLOTANTE SIMPLE
+// 🚀 BOTÓN WHATSAPP FLOTANTE STICKY
 .whatsapp-float {
   position: fixed;
   bottom: 80px;
   right: 20px;
   z-index: 1000;
-  display: none;
+  display: block; // Visible en todas las resoluciones
   
-  // Solo en móviles
+  // Ajustes específicos para móviles
   @media (max-width: $breakpoint-md) {
-    display: block;
+    bottom: 20px;
+    right: 15px;
+  }
+  
+  // Ajustes para desktop
+  @media (min-width: $breakpoint-md + 1) {
+    bottom: 30px;
+    right: 30px;
+  }
+  
+  // Ajustes para tablets
+  @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  // Indicador de nuevo mensaje
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: whatsapp-notification 2s ease-in-out infinite;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+  }
+  
+  // Clase para ocultar notificación
+  &.notification-hidden::after {
+    opacity: 0;
+    animation: none;
   }
   
   .whatsapp-float-btn {
@@ -226,10 +261,18 @@ li {
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
     
     &:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+      background: #22c55e;
+    }
+    
+    &:active {
+      transform: scale(0.95);
     }
     
     svg {
@@ -237,6 +280,110 @@ li {
       height: 32px;
       fill: currentColor;
     }
+    
+      // Mejorar visibilidad en desktop
+  @media (min-width: $breakpoint-md + 1) {
+    width: 70px;
+    height: 70px;
+    
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+    
+    // Agregar pulso sutil en desktop
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.3);
+      animation: whatsapp-pulse 2s infinite;
+      z-index: -1;
+    }
+    
+    // Tooltip en desktop
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #1f2937;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 1001;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        right: -6px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left: 6px solid #1f2937;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+      }
+    }
+    
+    &:hover .whatsapp-tooltip {
+      opacity: 1;
+      visibility: visible;
+      right: 85px;
+    }
+  }
+  }
+  
+  // Animación de pulso para desktop
+  @media (min-width: $breakpoint-md + 1) {
+    @keyframes whatsapp-pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.4);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// Animaciones adicionales para el botón de WhatsApp
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes whatsapp-notification {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
   }
 }
 
@@ -438,14 +585,38 @@ img[src*="deposito"], img[src*="productos"] {
     color: $white;
     
     .loader-logo {
-      font-family: $font-family-heading;
-      font-size: $font-size-4xl;
-      font-weight: 800;
       margin-bottom: $spacing-lg;
-      color: $primary-color;
-      text-shadow: 0 0 20px rgba($primary-color, 0.3);
-      animation: logoGlow 2s ease-in-out infinite alternate;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-md;
+      
+      .logo-image {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        filter: drop-shadow(0 0 20px rgba($primary-color, 0.5));
+        animation: logoFloat 3s ease-in-out infinite;
+        
+        @media (max-width: $breakpoint-md) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      
+      .logo-text {
+        font-family: $font-family-heading;
+        font-size: $font-size-2xl;
+        font-weight: 800;
+        color: $primary-color;
+        text-shadow: 0 0 20px rgba($primary-color, 0.3);
+        animation: logoGlow 2s ease-in-out infinite alternate;
+        
+        @media (max-width: $breakpoint-md) {
+          font-size: $font-size-xl;
+        }
+      }
       
       // Líneas decorativas
       &::before,
@@ -468,8 +639,6 @@ img[src*="deposito"], img[src*="productos"] {
       }
       
       @media (max-width: $breakpoint-md) {
-        font-size: $font-size-3xl;
-        
         &::before,
         &::after {
           width: 40px;
@@ -517,6 +686,21 @@ img[src*="deposito"], img[src*="productos"] {
   100% {
     text-shadow: 0 0 30px rgba($primary-color, 0.6), 0 0 40px rgba($primary-color, 0.3);
     transform: scale(1.02);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-1deg);
   }
 }
 

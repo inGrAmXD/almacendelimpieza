@@ -78,4 +78,45 @@
   /* Critical CSS will be inlined here for first paint optimization */
   .hero { min-height: 100vh; display: flex; align-items: center; }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  
+  /* FORZAR CARRUSEL QUE SÍ FUNCIONA */
+  .carousel-track {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    width: max-content !important;
+    animation: carruselGira 20s linear infinite !important;
+    animation-play-state: running !important;
+  }
+  
+  .carousel-track:hover {
+    animation-play-state: paused !important;
+  }
+  
+  @keyframes carruselGira {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .carousel-item {
+    flex-shrink: 0 !important;
+    width: 160px !important;
+    height: 100px !important;
+    margin: 0 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 215, 0, 0.3) !important;
+  }
+  
+  .carousel-item img {
+    max-width: 90% !important;
+    max-height: 90% !important;
+    object-fit: contain !important;
+    filter: none !important;
+  }
 </style> 

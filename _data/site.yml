@@ -15,14 +15,14 @@ values:
   - title: "Confiabilidad" 
     description: "Cumplimos con nuestros compromisos de entrega y servicio"
   - title: "Experiencia"
-    description: "Más de 10 años conociendo las necesidades del sector"
+    description: "Más de 15 años conociendo las necesidades del sector"
   - title: "Proximidad"
     description: "Atención personalizada y seguimiento continuo"
 
 # Hero section
 hero:
-  title: "Todo para la limpieza profesional"
-  subtitle: "la diferencia está en el servicio"
+  title: ""
+  subtitle: "LA DIFERENCIA ESTÁ EN EL SERVICIO"
   cta_text: "Ver servicios"
   cta_link: "#servicios"
   background_image: "/assets/images/15.jpeg"
@@ -42,9 +42,9 @@ social:
 
 # Estadísticas destacadas
 stats:
-  - number: "500+"
+  - number: "700+"
     text: "Clientes satisfechos"
-  - number: "10+"
+  - number: "15+"
     text: "Años de experiencia"
-  - number: "24/7"
+  - number: "Lunes a Viernes"
     text: "Atención disponible" 

@@ -88,17 +88,65 @@
 
 .hero-subtitle {
   font-size: $font-size-xl;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-semibold;
   margin-bottom: $spacing-lg;
-  color: $primary-color;
-  text-shadow: 1px 1px 3px rgba($black, 0.7);
+  color: $primary-dark; // Usar variable naranja
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  // Efecto de relieve sutil y elegante
+  text-shadow: 
+    1px 1px 0px $secondary-color,      // Sombra negra sutil
+    2px 2px 0px rgba($secondary-color, 0.8), // Sombra secundaria
+    0px 0px 15px rgba($primary-dark, 0.4);   // Glow naranja sutil
+  
+  // Transición suave
+  transition: all $transition-normal;
+  
+  // Animación sutil del relieve
+  animation: subtle-relief 4s ease-in-out infinite;
+  
+  // Efecto hover sutil
+  &:hover {
+    transform: translateY(-1px);
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      2px 2px 0px rgba($secondary-color, 0.9),
+      0px 0px 20px rgba($primary-dark, 0.6);
+    animation-play-state: paused;
+  }
   
   @media (min-width: $breakpoint-sm) {
     font-size: $font-size-2xl;
+    letter-spacing: 2px;
+    
+    // Sombras para pantallas medianas
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      2px 2px 0px rgba($secondary-color, 0.8),
+      0px 0px 20px rgba($primary-dark, 0.5);
   }
   
   @media (min-width: $breakpoint-lg) {
     font-size: $font-size-3xl;
+    letter-spacing: 3px;
+    
+    // Sombras para pantallas grandes
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      2px 2px 0px rgba($secondary-color, 0.8),
+      3px 3px 0px rgba($secondary-color, 0.6),
+      0px 0px 25px rgba($primary-dark, 0.5);
+  }
+  
+  // Ajustes para dispositivos móviles
+  @media (max-width: $breakpoint-sm) {
+    letter-spacing: 1px;
+    
+    // Sombras mínimas en móvil
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      0px 0px 10px rgba($primary-dark, 0.4);
   }
 }
 
@@ -373,4 +421,22 @@
   100% {
     background-position: 200% 0;
   }
-} 
+}
+
+// Animación sutil del relieve
+@keyframes subtle-relief {
+  0%, 100% {
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      2px 2px 0px rgba($secondary-color, 0.8),
+      0px 0px 15px rgba($primary-dark, 0.4);
+  }
+  50% {
+    text-shadow: 
+      1px 1px 0px $secondary-color,
+      2px 2px 0px rgba($secondary-color, 0.9),
+      0px 0px 20px rgba($primary-dark, 0.6);
+  }
+}
+
+ 

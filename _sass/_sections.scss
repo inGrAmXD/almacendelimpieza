@@ -57,7 +57,7 @@
   }
   
   .value-title {
-    color: $primary-color;
+    color: $secondary-color;
     margin-bottom: $spacing-sm;
   }
 }
@@ -1063,4 +1063,18 @@
     color: $gray-700;
     line-height: 1.4;
   }
-} 
+}
+
+// Companies Section - Carrusel de Logos
+.companies-section {
+  padding: $spacing-4xl 0;
+  background-color: $light-gray;
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+// El carrusel de empresas ahora está completamente definido en assets/css/main.scss
+// para evitar duplicaciones y conflictos 

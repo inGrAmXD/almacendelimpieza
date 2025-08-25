@@ -1,0 +1,60 @@
+# Configuración de empresas que confían en Almacén de Limpieza
+companies:
+  - name: "SEIQ"
+    logo: "SEIQ LOGO.JPG"
+    alt: "SEIQ"
+    
+  - name: "ROYCO"
+    logo: "ROYCO FONDO BLANCO.jpeg"
+    alt: "ROYCO"
+    
+  - name: "Pack Express Descartables"
+    logo: "pack express descartables-logo.png"
+    alt: "Pack Express Descartables"
+    
+  - name: "LOMIR"
+    logo: "LOMIR - copia.jpg"
+    alt: "LOMIR"
+    
+  - name: "Higienik"
+    logo: "logo-Higienik-245x84.png"
+    alt: "Higienik"
+    
+  - name: "Unilever"
+    logo: "logo unilever - copia.jpg"
+    alt: "Unilever"
+    
+  - name: "Thames"
+    logo: "logo thames - copia.jpg"
+    alt: "Thames"
+    
+  - name: "Preferred"
+    logo: "LOGO PREFERED.jpg"
+    alt: "Preferred"
+    
+  - name: "Osram"
+    logo: "logo osram - copia.jpg"
+    alt: "Osram"
+    
+  - name: "Fiorentina"
+    logo: "logo fiorentina - copia.png"
+    alt: "Fiorentina"
+    
+  - name: "Logo Elegante"
+    logo: "Logo Elegante 1.jpg"
+    alt: "Logo Elegante"
+    
+  - name: "Diersey"
+    logo: "logo diersey - copia.jpg"
+    alt: "Diersey"
+    
+  - name: "Chemical"
+    logo: "LOGO CHEMICAL - copia.jpeg"
+    alt: "Chemical"
+
+# Configuración del carrusel
+carousel:
+  speed: 30 # segundos para completar una vuelta
+  pause_on_hover: true
+  responsive: true
+  show_shadows: true

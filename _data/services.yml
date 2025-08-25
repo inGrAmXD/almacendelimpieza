@@ -14,16 +14,18 @@ services:
 
 # Rubros que atienden
 sectors:
-  - title: "Comercios Gastronómicos"
-    description: "Productos especializados para restaurantes, bares, comedores y todo tipo de establecimientos gastronómicos."
+  - title: "Comercios Gastronómicos & Cadenas"
+    description: "Amplia gama de productos, y marcas para abastecer Restaurantes, Bares, Centros de producción, Comedores, y todo tipo de establecimiento gastronómico.
+    Atención personalizada para grupos gastronomicos."
     icon: "restaurant"
     products:
-      - "Desengrasantes industriales"
-      - "Detergentes para vajilla"
-      - "Sanitizantes de superficies"
-      - "Productos para pisos de alto tránsito"
+      - "Diversidad en Productos Quimicos."
+      - "Papeleria Industrial para uso en cocinas."
+      - "Equipamiento para baños & amplia variedad de productos sanitarios."
+      - "Herramientas sanitarias & mucho más."
+      - "Productos Descartables."
       
-  - title: "Cadenas Gastronómicas"
+  - title: "Plantas de Producción & Catering"
     description: "Asesoramiento personalizado para cadenas gastronómicas y centros de producción alimenticias."
     icon: "factory"
     products:
@@ -32,7 +34,7 @@ sectors:
       - "Soluciones industriales"
       - "Asesoramiento técnico especializado"
       
-  - title: "Hotelería"
+  - title: "Hoteles & Alojamientos"
     description: "Soluciones integrales de limpieza para hoteles, hostales y establecimientos de alojamiento."
     icon: "hotel"
     products:

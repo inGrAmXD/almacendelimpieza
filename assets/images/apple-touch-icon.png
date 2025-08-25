@@ -1,0 +1,56 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo principal con gradiente -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Círculo de fondo con gradiente -->
+  <circle cx="60" cy="60" r="55" fill="url(#bgGradient)" stroke="#000000" stroke-width="2" filter="url(#glow)"/>
+  
+  <!-- Símbolo de limpieza estilizado -->
+  <!-- Gotas de agua estilizadas -->
+  <path d="M35 25 Q35 15 45 15 Q55 15 55 25 Q55 35 45 35 Q35 35 35 25 Z" fill="#25D366" stroke="#000000" stroke-width="1"/>
+  <path d="M65 25 Q65 15 75 15 Q85 15 85 25 Q85 35 75 35 Q65 35 65 25 Z" fill="#25D366" stroke="#000000" stroke-width="1"/>
+  
+  <!-- Botella central estilizada -->
+  <rect x="45" y="40" width="30" height="45" rx="4" fill="#22C55E" stroke="#000000" stroke-width="1.5"/>
+  <rect x="47" y="42" width="26" height="41" rx="3" fill="#25D366"/>
+  
+  <!-- Tapa de la botella -->
+  <rect x="50" y="35" width="20" height="8" rx="3" fill="#FFA500" stroke="#000000" stroke-width="1"/>
+  <rect x="52" y="37" width="16" height="4" rx="2" fill="#FF8C00"/>
+  
+  <!-- Etiqueta de la botella -->
+  <rect x="48" y="50" width="24" height="25" fill="#FFFFFF" stroke="#000000" stroke-width="0.5"/>
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">AL</text>
+  <text x="60" y="72" font-family="Arial, sans-serif" font-size="6" font-weight="normal" text-anchor="middle" fill="#666666">LIMPIEZA</text>
+  
+  <!-- Estrella de calidad -->
+  <polygon points="60,8 62,12 66,12 63,16 65,20 60,18 55,20 57,16 54,12 58,12" fill="#FFD700" stroke="#000000" stroke-width="0.8"/>
+  
+  <!-- Elementos decorativos -->
+  <!-- Esponja estilizada -->
+  <rect x="20" y="75" width="20" height="12" rx="3" fill="#FFB6C1" stroke="#000000" stroke-width="1"/>
+  <circle cx="25" cy="79" r="2" fill="#FF69B4"/>
+  <circle cx="32" cy="81" r="2" fill="#FF69B4"/>
+  <circle cx="28" cy="85" r="2" fill="#FF69B4"/>
+  
+  <!-- Escoba estilizada -->
+  <line x1="80" y1="75" x2="80" y2="95" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
+  <line x1="75" y1="75" x2="85" y2="75" stroke="#8B4513" stroke-width="2"/>
+  <line x1="75" y1="73" x2="85" y2="73" stroke="#8B4513" stroke-width="2"/>
+  <line x1="75" y1="71" x2="85" y2="71" stroke="#8B4513" stroke-width="2"/>
+  
+  <!-- Texto de marca -->
+  <text x="60" y="110" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="#000000">PROFESIONAL</text>
+</svg>

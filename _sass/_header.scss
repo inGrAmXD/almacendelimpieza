@@ -13,6 +13,11 @@
   &.scrolled {
     background-color: rgba($white, 0.98);
     box-shadow: $shadow-md;
+    
+    .navbar-logo {
+      transform: scale(0.95);
+      filter: drop-shadow(0 1px 2px rgba($secondary-color, 0.05));
+    }
   }
 }
 
@@ -28,41 +33,71 @@
 }
 
 .navbar-brand {
-  .logo-text {
+  .logo-link {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: $spacing-sm;
     text-decoration: none;
     
-    .logo-main {
-      font-family: $font-family-heading;
-      font-size: $font-size-lg;
-      font-weight: 800;
-      color: $primary-color;
-      line-height: 0.9;
-      letter-spacing: 1px;
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba($secondary-color, 0.1));
+      transition: all $transition-normal;
       
       @media (min-width: $breakpoint-lg) {
-        font-size: $font-size-xl;
+        width: 50px;
+        height: 50px;
+      }
+      
+      // Ajustes para dispositivos muy pequeños
+      @media (max-width: $breakpoint-sm) {
+        width: 35px;
+        height: 35px;
       }
     }
     
-    .logo-sub {
-      font-family: $font-family-heading;
-      font-size: $font-size-xs;
-      font-weight: 500;
-      color: $gray-600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: -2px;
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       
-      @media (min-width: $breakpoint-lg) {
-        font-size: $font-size-sm;
+      .logo-main {
+        font-family: $font-family-heading;
+        font-size: $font-size-lg;
+        font-weight: 800;
+        color: $primary-color;
+        line-height: 0.9;
+        letter-spacing: 1px;
+        
+        @media (min-width: $breakpoint-lg) {
+          font-size: $font-size-xl;
+        }
+      }
+      
+      .logo-sub {
+        font-family: $font-family-heading;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        color: $gray-600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-top: -2px;
+        
+        @media (min-width: $breakpoint-lg) {
+          font-size: $font-size-sm;
+        }
       }
     }
     
     &:hover {
       text-decoration: none;
+      
+      .navbar-logo {
+        transform: scale(1.05);
+        filter: drop-shadow(0 4px 8px rgba($secondary-color, 0.2));
+      }
       
       .logo-main {
         color: $primary-dark;

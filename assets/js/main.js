@@ -634,30 +634,176 @@ class GalleryAnimations {
   }
 }
 
-// 🚀 Botón WhatsApp Flotante Simple
+// 🚀 Botón WhatsApp Flotante Sticky
 class WhatsAppFloatButton {
   constructor() {
     this.floatButton = document.querySelector('.whatsapp-float');
+    this.button = this.floatButton?.querySelector('.whatsapp-float-btn');
     
     this.init();
   }
   
   init() {
-    if (!this.floatButton) return;
+    if (!this.floatButton || !this.button) return;
     
-    // Ya está visible por CSS en mobile, solo agregamos el efecto de click
-    this.floatButton.addEventListener('click', () => this.handleClick());
+    // Efecto de click mejorado
+    this.button.addEventListener('click', (e) => this.handleClick(e));
+    
+    // Efecto de hover para desktop
+    this.button.addEventListener('mouseenter', () => this.handleHover());
+    this.button.addEventListener('mouseleave', () => this.handleHoverEnd());
+    
+    // Efecto de focus para accesibilidad
+    this.button.addEventListener('focus', () => this.handleFocus());
+    this.button.addEventListener('blur', () => this.handleFocusEnd());
+    
+    // Agregar indicador de "nuevo mensaje" en desktop
+    this.addNewMessageIndicator();
   }
   
-  handleClick() {
-    // Efecto de click simple
-    const button = this.floatButton.querySelector('.whatsapp-float-btn');
+  handleClick(e) {
+    // Efecto de click mejorado
+    this.button.style.transform = 'scale(0.9)';
     
-    button.style.transform = 'scale(0.9)';
+    // Agregar efecto de ripple
+    this.createRippleEffect(e);
+    
+    // Remover indicador de notificación
+    this.removeNotificationIndicator();
     
     setTimeout(() => {
-      button.style.transform = '';
+      this.button.style.transform = '';
     }, 150);
+    
+    // Tracking del click (opcional)
+    this.trackClick();
+  }
+  
+  handleHover() {
+    // Efecto adicional en hover para desktop
+    if (window.innerWidth > 768) {
+      this.button.style.transform = 'scale(1.05)';
+    }
+  }
+  
+  handleHoverEnd() {
+    this.button.style.transform = '';
+  }
+  
+  handleFocus() {
+    this.button.style.outline = '2px solid #25D366';
+    this.button.style.outlineOffset = '2px';
+  }
+  
+  handleFocusEnd() {
+    this.button.style.outline = '';
+    this.button.style.outlineOffset = '';
+  }
+  
+  createRippleEffect(e) {
+    const ripple = document.createElement('span');
+    const rect = this.button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+      position: absolute;
+      width: ${size}px;
+      height: ${size}px;
+      left: ${x}px;
+      top: ${y}px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    `;
+    
+    this.button.appendChild(ripple);
+    
+    setTimeout(() => {
+      if (ripple.parentNode) {
+        ripple.remove();
+      }
+    }, 600);
+  }
+  
+  addNewMessageIndicator() {
+    // Solo en desktop, agregar indicador sutil
+    if (window.innerWidth > 768) {
+      const indicator = document.createElement('div');
+      indicator.className = 'whatsapp-new-message';
+      indicator.innerHTML = '<span>💬</span>';
+      indicator.style.cssText = `
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #ef4444;
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        animation: bounce 2s infinite;
+        z-index: 1;
+      `;
+      
+      this.button.appendChild(indicator);
+      
+      // Remover después de 5 segundos
+      setTimeout(() => {
+        if (indicator.parentNode) {
+          indicator.remove();
+        }
+      }, 5000);
+    }
+  }
+  
+  trackClick() {
+    // Aquí podrías agregar analytics si lo deseas
+    console.log('WhatsApp button clicked');
+  }
+  
+  removeNotificationIndicator() {
+    // Remover el indicador de notificación usando clase CSS
+    const floatContainer = this.floatButton;
+    if (floatContainer) {
+      floatContainer.classList.add('notification-hidden');
+      
+      // Remover la clase después de un tiempo para que vuelva a aparecer
+      setTimeout(() => {
+        floatContainer.classList.remove('notification-hidden');
+      }, 30000); // 30 segundos
+    }
+  }
+}
+
+// 🚀 Carrusel Simple que SÍ FUNCIONA
+class CompaniesCarousel {
+  constructor() {
+    this.carousel = document.querySelector('.companies-carousel');
+    this.track = document.querySelector('.carousel-track');
+    
+    this.init();
+  }
+  
+  init() {
+    if (this.carousel && this.track) {
+      // SIMPLE - solo hover para pausar
+      this.carousel.addEventListener('mouseenter', () => {
+        this.track.style.animationPlayState = 'paused';
+      });
+      
+      this.carousel.addEventListener('mouseleave', () => {
+        this.track.style.animationPlayState = 'running';
+      });
+      
+      console.log('Carrusel inicializado - debería estar girando');
+    }
   }
 }
 
@@ -682,6 +828,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 🚀 Botón WhatsApp flotante simple
   new WhatsAppFloatButton();
+  
+  // 🏢 Carrusel de logos de empresas
+  new CompaniesCarousel();
 });
 
 // 🚀 Epic Loading Manager
