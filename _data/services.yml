@@ -1,7 +1,7 @@
 # Servicios principales
 services:
   - title: "DISTRIBUCIÓN MAYORISTA"
-    description: "Acercamos a nuestros clientes, los mejores precios con precios competitivos del mercado."
+    description: "Acercamos a nuestros clientes, los mejores productos con precios competitivos del mercado."
     icon: "truck"
     
   - title: "Asesoramiento Técnico"

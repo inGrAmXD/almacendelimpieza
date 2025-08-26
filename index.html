@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Inicio"
-description: "Distribuidora líder en productos de limpieza profesional para gastronomía. Artículos de limpieza por mayor para restaurantes, bares, comedores y catering."
+title: "Almacén de Limpieza Argentina - Distribuidora Productos de Limpieza Profesional por Mayor"
+description: "🧽 Almacén de limpieza profesional en Argentina ✅ Distribuidora de productos de limpieza por mayor para restaurantes, hoteles, colegios y empresas ✅ +15 años de experiencia ✅ Entrega en CABA y GBA"
 ---
 
 <!-- Hero Section -->
@@ -12,9 +12,8 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
   
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">{{ site.data.site.hero.title }}</h1>
+      <h1 class="hero-title" style="display: none;">Almacén de Limpieza Profesional Argentina</h1>
       <p class="hero-subtitle" data-text="{{ site.data.site.hero.subtitle }}">{{ site.data.site.hero.subtitle }}</p>
-      <p class="hero-attention">{{ site.data.site.hero.attention }}</p>
       <p class="hero-description">Nos avalan más de 15 años de experiencia, brindando soluciones a comercios gastronómicos, hotelería, colegios, residencias geriátricas, centros de salud, empresas y mucho más!</p>
       
       <div class="hero-actions">
@@ -132,101 +131,92 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">RECORRIDO POR NUESTRO DEPOSITO</h2>
-      <p class="section-subtitle">Fotos varias pasando de forma lateral</p>
+      <p class="section-subtitle">Conocé nuestras instalaciones y equipo de trabajo</p>
     </div>
     
-    <!-- Video Hero ÉPICO con fusion de fotos -->
-    <div class="video-epic-section">
-      <div class="video-main-container">
-        <video autoplay muted loop playsinline class="main-video">
-          <source src="/assets/images/2.mp4" type="video/mp4">
-          Tu navegador no soporta el elemento de video.
+    <!-- Video con Galería Interactiva Unificada -->
+    <div class="unified-depot-showcase">
+      <!-- Video principal como fondo -->
+      <div class="video-backdrop">
+        <video autoplay muted loop playsinline class="depot-video">
+          <source src="/assets/images/fotos-deposito/video-deposito-descargando.mp4" type="video/mp4">
         </video>
-        
-        <!-- Fotos flotantes que aparecen y desaparecen -->
-        <div class="floating-photos">
-          <div class="floating-photo floating-photo-1">
-            <img src="/assets/images/1.jpeg" alt="Depósito vista 1">
-          </div>
-          <div class="floating-photo floating-photo-2">
-            <img src="/assets/images/3.jpeg" alt="Depósito vista 2">
-          </div>
-          <div class="floating-photo floating-photo-3">
-            <img src="/assets/images/5.jpeg" alt="Depósito vista 3">
-          </div>
-          <div class="floating-photo floating-photo-4">
-            <img src="/assets/images/7.jpeg" alt="Depósito vista 4">
-          </div>
-        </div>
-        
-
-      </div>
-    </div>
-
-    <!-- Carousel interactivo del depósito -->
-    <div class="depot-carousel">
-      <div class="carousel-header">
-        <h3>Recorrido por Nuestro Depósito</h3>
-        <div class="carousel-controls">
-          <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
-          <button class="carousel-btn carousel-next" aria-label="Siguiente">›</button>
-        </div>
+        <div class="video-overlay"></div>
       </div>
       
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <div class="carousel-slide">
-            <img src="/assets/images/1.jpeg" alt="Vista del depósito principal">
-            <div class="slide-overlay">
-              <h4>Entrada Principal</h4>
-              <p>Vista general de nuestro depósito organizado</p>
+      <!-- Galería de fotos interactiva encima del video -->
+      <div class="interactive-gallery">
+        <div class="gallery-controls">
+          <button class="gallery-btn gallery-prev" aria-label="Anterior">‹</button>
+          <button class="gallery-btn gallery-next" aria-label="Siguiente">›</button>
+        </div>
+        
+        <div class="main-photo-container">
+          <div class="photo-showcase active" data-index="0">
+            <img src="/assets/images/fotos-deposito/foto-deposito-completo.jpg" alt="Vista completa del depósito">
+            <div class="photo-info">
+              <h3>Vista Completa</h3>
+              <p>Nuestras instalaciones organizadas y listas para servir</p>
             </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/assets/images/4.jpeg" alt="Área de almacenamiento">
-            <div class="slide-overlay">
-              <h4>Zona de Almacenamiento</h4>
-              <p>Productos organizados para fácil acceso</p>
+          <div class="photo-showcase" data-index="1">
+            <img src="/assets/images/fotos-deposito/foto-deposito-estantes.jpg" alt="Estantes organizados">
+            <div class="photo-info">
+              <h3>Almacenamiento Profesional</h3>
+              <p>Productos organizados para acceso rápido y eficiente</p>
             </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/assets/images/6.jpeg" alt="Pasillos del depósito">
-            <div class="slide-overlay">
-              <h4>Pasillos de Trabajo</h4>
-              <p>Espacios amplios para operación eficiente</p>
+          <div class="photo-showcase" data-index="2">
+            <img src="/assets/images/fotos-deposito/foto-deposito-productos.jpg" alt="Variedad de productos">
+            <div class="photo-info">
+              <h3>Amplio Stock</h3>
+              <p>Miles de productos de las mejores marcas</p>
             </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/assets/images/8.jpeg" alt="Vista lateral del depósito">
-            <div class="slide-overlay">
-              <h4>Vista Lateral</h4>
-              <p>Perspectiva completa de nuestras instalaciones</p>
+          <div class="photo-showcase" data-index="3">
+            <img src="/assets/images/fotos-deposito/foto-deposito-personas-trabajando.jpg" alt="Equipo trabajando">
+            <div class="photo-info">
+              <h3>Equipo Profesional</h3>
+              <p>Nuestro equipo preparando cada pedido con dedicación</p>
             </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/assets/images/10.jpeg" alt="Área de trabajo">
-            <div class="slide-overlay">
-              <h4>Zona Operativa</h4>
-              <p>Donde preparamos cada pedido con cuidado</p>
+          <div class="photo-showcase" data-index="4">
+            <img src="/assets/images/fotos-deposito/foto-camioneta.jpg" alt="Logística y entrega">
+            <div class="photo-info">
+              <h3>Logística Eficiente</h3>
+              <p>Entregas rápidas y seguras en toda la zona</p>
             </div>
           </div>
-          <div class="carousel-slide">
-            <img src="/assets/images/12.jpeg" alt="Vista panorámica">
-            <div class="slide-overlay">
-              <h4>Vista Panorámica</h4>
-              <p>La magnitud de nuestro espacio de trabajo</p>
+          <div class="photo-showcase" data-index="5">
+            <img src="/assets/images/fotos-deposito/foto-deposito-maquina.jpg" alt="Maquinaria especializada">
+            <div class="photo-info">
+              <h3>Tecnología Avanzada</h3>
+              <p>Equipamiento moderno para mejor servicio</p>
             </div>
           </div>
         </div>
-      </div>
-      
-      <div class="carousel-indicators">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
-        <button class="indicator" data-slide="4"></button>
-        <button class="indicator" data-slide="5"></button>
+        
+        <!-- Thumbnails navegables -->
+        <div class="gallery-thumbnails">
+          <button class="thumb-btn active" data-target="0">
+            <img src="/assets/images/fotos-deposito/foto-deposito-completo.jpg" alt="">
+          </button>
+          <button class="thumb-btn" data-target="1">
+            <img src="/assets/images/fotos-deposito/foto-deposito-estantes.jpg" alt="">
+          </button>
+          <button class="thumb-btn" data-target="2">
+            <img src="/assets/images/fotos-deposito/foto-deposito-productos.jpg" alt="">
+          </button>
+          <button class="thumb-btn" data-target="3">
+            <img src="/assets/images/fotos-deposito/foto-deposito-personas-trabajando.jpg" alt="">
+          </button>
+          <button class="thumb-btn" data-target="4">
+            <img src="/assets/images/fotos-deposito/foto-camioneta.jpg" alt="">
+          </button>
+          <button class="thumb-btn" data-target="5">
+            <img src="/assets/images/fotos-deposito/foto-deposito-maquina.jpg" alt="">
+          </button>
+        </div>
       </div>
     </div>
 
@@ -239,7 +229,6 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">LAS MARCAS QUE NOS ACOMPAÑAN</h2>
-      <p class="section-subtitle">Fotos pasando en línea recta con un fondo a conciliar de las siguientes marcas</p>
     </div>
     
     <div class="companies-carousel">
@@ -381,7 +370,7 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
         <h3>Envianos tu Consulta</h3>
         <p>Completá el formulario y te contactamos a la brevedad para ofrecerte la mejor solución para tu negocio.</p>
         
-        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" accept-charset="UTF-8">
+        <form class="contact-form" action="#" method="POST" accept-charset="UTF-8" id="contactForm">
           <!-- Campo oculto para identificar el origen -->
           <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web - Almacén de Limpieza">
           <input type="hidden" name="_next" value="#contacto">
@@ -470,6 +459,9 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
     
     <div class="testimonials-grid">
       <!-- Los testimonios se agregarán aquí cuando estén disponibles -->
+    </div>
+  </div>
+</section> 
     </div>
   </div>
 </section> 

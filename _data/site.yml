@@ -1,7 +1,7 @@
 # Información principal de la empresa
 company:
   name: "Almacén de Limpieza"
-  tagline: "la diferencia está en el servicio"
+  tagline: "La diferencia está en el servicio"
   description: "Somos una distribuidora especializada en productos de limpieza profesional. Vendemos a comercios gastronómicos & brindamos asesoramiento personalizado a cadenas gastronómicas y centros de producción alimenticias. Atendemos hotelería, colegios, residencias geriátricas, centros médicos y empresas."
 
 # Misión, Visión y Valores sugeridos
@@ -23,10 +23,9 @@ values:
 hero:
   title: ""
   subtitle: "LA DIFERENCIA ESTÁ EN EL SERVICIO"
-  attention: "ATENCIÓN DISPONIBLE LUNES A VIERNES"
   cta_text: "Ver servicios"
   cta_link: "#servicios"
-  background_image: "/assets/images/15.jpeg"
+  background_image: "/assets/images/fotos-deposito/foto-deposito-camioneta-frente.jpg"
 
 # Datos de contacto
 contact:
@@ -46,4 +45,6 @@ stats:
   - number: "700+"
     text: "Clientes satisfechos"
   - number: "15+"
-    text: "Años de experiencia" 
+    text: "Años de experiencia"
+  - number: "Lun-Vie"
+    text: "Atención disponible" 

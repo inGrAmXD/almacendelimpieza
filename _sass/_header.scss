@@ -20,10 +20,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-sm 0;
+  padding: 8px 0;         // SÚPER compacto
+  min-height: 70px;       // MUY delgado
   
   @media (min-width: $breakpoint-lg) {
-    padding: $spacing-md 0;
+    padding: 12px 0;
+    min-height: 80px;     // También compacto en desktop
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    padding: 6px 0;
+    min-height: 65px;      // Delgadísimo en móviles
   }
 }
 
@@ -35,19 +42,23 @@
     text-decoration: none;
     
     .navbar-logo {
-      width: 90px;
-      height: 90px;
+      width: 20vh;
+      height: 10vh;
       object-fit: contain;
+      max-width: none !important;  
+      max-height: none !important;
+      display: block;
+      flex-shrink: 0;
       
       @media (min-width: $breakpoint-lg) {
-        width: 100px;
-        height: 100px;
+        width: 20vh;
+        height: 10vh;
       }
       
-      // Ajustes para dispositivos muy pequeños
+      // Móviles pequeños
       @media (max-width: $breakpoint-sm) {
-        width: 80px;
-        height: 80px;
+        width: 15vh;
+        height: 6vh;
       }
     }
     

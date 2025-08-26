@@ -42,25 +42,82 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "LocalBusiness", "Store"],
   "name": "{{ site.data.site.company.name }}",
   "description": "{{ site.data.site.company.description }}",
   "url": "{{ site.url }}",
   "logo": "{{ site.url }}/assets/images/logo.svg",
+  "image": "{{ site.url }}/assets/images/og-image.jpg",
+  "priceRange": "$$",
+  "currenciesAccepted": "ARS",
+  "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Productos de Limpieza Profesional",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Productos de Limpieza para Gastronomía"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Productos de Limpieza para Hotelería"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Productos de Limpieza Industrial"
+        }
+      }
+    ]
+  },
+  "keywords": "almacén de limpieza, productos de limpieza profesional, distribuidora Argentina",
+  "slogan": "La diferencia está en el servicio",
+  "foundingDate": "2009",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "{{ site.data.site.contact.phone }}",
     "email": "{{ site.data.site.contact.email }}",
     "contactType": "customer service",
-    "areaServed": "AR",
-    "availableLanguage": "Spanish"
+    "areaServed": ["AR", "CABA", "GBA"],
+    "availableLanguage": "Spanish",
+    "hoursAvailable": "Mo-Fr 09:00-18:00"
   },
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "AR",
     "addressLocality": "Buenos Aires",
+    "addressRegion": "CABA",
     "streetAddress": "{{ site.data.site.contact.address }}"
   },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.6118,
+      "longitude": -58.3960
+    },
+    "geoRadius": "50000"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Productos de Limpieza por Mayor",
+      "description": "Venta mayorista de productos de limpieza profesional"
+    },
+    {
+      "@type": "Offer", 
+      "name": "Asesoramiento Especializado",
+      "description": "Consultoría en productos de limpieza para diferentes sectores"
+    }
+  ],
   "sameAs": [
     "{{ site.data.site.social.facebook }}",
     "{{ site.data.site.social.instagram }}"

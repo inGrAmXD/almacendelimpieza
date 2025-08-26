@@ -174,30 +174,42 @@ class ContactForm {
     const originalText = submitButton.textContent;
     
     // Estado de carga
-    submitButton.textContent = 'Enviando...';
+    submitButton.textContent = 'Redirigiendo a WhatsApp...';
     submitButton.disabled = true;
     
-    try {
-      const response = await fetch(this.form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    // Extraer datos del formulario
+    const nombre = formData.get('name') || '';
+    const empresa = formData.get('company') || '';
+    const email = formData.get('email') || '';
+    const telefono = formData.get('phone') || '';
+    const tipoNegocio = formData.get('business_type') || '';
+    const mensaje = formData.get('message') || '';
+    
+    // Crear mensaje para WhatsApp
+    let whatsappMessage = `¡Hola! Soy ${nombre}`;
+    if (empresa) whatsappMessage += ` de ${empresa}`;
+    whatsappMessage += `.\n\n`;
+    
+    if (tipoNegocio && tipoNegocio !== 'Seleccioná tu rubro') {
+      whatsappMessage += `Tipo de negocio: ${tipoNegocio}\n`;
+    }
+    if (email) whatsappMessage += `Email: ${email}\n`;
+    if (telefono) whatsappMessage += `Teléfono: ${telefono}\n`;
+    
+    whatsappMessage += `\nConsulta: ${mensaje || 'Quiero consultar sobre productos de limpieza profesional para mi negocio.'}`;
+    
+    // Codificar mensaje para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/5491178434444?text=${encodedMessage}`;
+    
+    setTimeout(() => {
+      window.open(whatsappURL, '_blank');
+      this.showMessage('¡Te redirigimos a WhatsApp para completar tu consulta!', 'success');
+      this.form.reset();
       
-      if (response.ok) {
-        this.showMessage('¡Mensaje enviado correctamente! Te contactaremos pronto.', 'success');
-        this.form.reset();
-      } else {
-        throw new Error('Error en el envío');
-      }
-    } catch (error) {
-      this.showMessage('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.', 'error');
-    } finally {
       submitButton.textContent = originalText;
       submitButton.disabled = false;
-    }
+    }, 1000);
   }
   
   showMessage(message, type) {
@@ -807,6 +819,174 @@ class CompaniesCarousel {
   }
 }
 
+// 🎬 GALERÍA UNIFICADA ÉPICA
+class UnifiedDepotGallery {
+  constructor() {
+    this.container = document.querySelector('.unified-depot-showcase');
+    this.video = document.querySelector('.depot-video');
+    this.photoShowcases = document.querySelectorAll('.photo-showcase');
+    this.thumbnails = document.querySelectorAll('.thumb-btn');
+    this.prevBtn = document.querySelector('.gallery-prev');
+    this.nextBtn = document.querySelector('.gallery-next');
+    
+    this.currentIndex = 0;
+    this.totalPhotos = this.photoShowcases.length;
+    this.autoSlideInterval = null;
+    
+    this.init();
+  }
+  
+  init() {
+    if (!this.container || this.totalPhotos === 0) return;
+    
+    // Configurar video
+    this.setupVideo();
+    
+    // Event listeners para controles
+    this.prevBtn?.addEventListener('click', () => this.previousPhoto());
+    this.nextBtn?.addEventListener('click', () => this.nextPhoto());
+    
+    // Event listeners para thumbnails
+    this.thumbnails.forEach((thumb, index) => {
+      thumb.addEventListener('click', () => this.goToPhoto(index));
+    });
+    
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') this.previousPhoto();
+      if (e.key === 'ArrowRight') this.nextPhoto();
+    });
+    
+    // Auto-slide
+    this.startAutoSlide();
+    
+    // Pausar auto-slide en hover
+    this.container.addEventListener('mouseenter', () => this.stopAutoSlide());
+    this.container.addEventListener('mouseleave', () => this.startAutoSlide());
+    
+    // Touch support para mobile
+    this.addTouchSupport();
+    
+    // Inicializar primera foto
+    this.updateGallery();
+  }
+  
+  setupVideo() {
+    if (!this.video) return;
+    
+    this.video.muted = true;
+    this.video.playsInline = true;
+    this.video.loop = true;
+    
+    // Intentar autoplay
+    this.video.addEventListener('loadeddata', () => {
+      this.video.play().catch(e => console.log('Video autoplay:', e));
+    });
+    
+    // Click en video para play/pause
+    this.video.addEventListener('click', () => {
+      if (this.video.paused) {
+        this.video.play();
+      } else {
+        this.video.pause();
+      }
+    });
+    
+    // Intersection observer para video
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.video.play().catch(() => {});
+            this.startAutoSlide();
+          } else {
+            this.video.pause();
+            this.stopAutoSlide();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(this.container);
+    }
+  }
+  
+  nextPhoto() {
+    this.currentIndex = (this.currentIndex + 1) % this.totalPhotos;
+    this.updateGallery();
+  }
+  
+  previousPhoto() {
+    this.currentIndex = this.currentIndex === 0 ? this.totalPhotos - 1 : this.currentIndex - 1;
+    this.updateGallery();
+  }
+  
+  goToPhoto(index) {
+    this.currentIndex = index;
+    this.updateGallery();
+  }
+  
+  updateGallery() {
+    // Actualizar fotos
+    this.photoShowcases.forEach((photo, index) => {
+      photo.classList.toggle('active', index === this.currentIndex);
+    });
+    
+    // Actualizar thumbnails
+    this.thumbnails.forEach((thumb, index) => {
+      thumb.classList.toggle('active', index === this.currentIndex);
+    });
+  }
+  
+  startAutoSlide() {
+    this.stopAutoSlide();
+    this.autoSlideInterval = setInterval(() => {
+      this.nextPhoto();
+    }, 4000); // 4 segundos
+  }
+  
+  stopAutoSlide() {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
+  }
+  
+  addTouchSupport() {
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    
+    this.container.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      this.stopAutoSlide();
+    });
+    
+    this.container.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+    });
+    
+    this.container.addEventListener('touchend', () => {
+      if (!isDragging) return;
+      
+      const diffX = startX - currentX;
+      const threshold = 50;
+      
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0) {
+          this.nextPhoto();
+        } else {
+          this.previousPhoto();
+        }
+      }
+      
+      isDragging = false;
+      this.startAutoSlide();
+    });
+  }
+}
+
 // Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   // 🚀 Inicializar loading screen épico
@@ -821,10 +1001,8 @@ document.addEventListener('DOMContentLoaded', () => {
   new ScrollAnimations();
   new LazyLoading();
   
-  // Nuevas funcionalidades de galería épicas
-  new DepotCarousel();
-  new EpicVideoSection();
-  new GalleryAnimations();
+  // 🎬 Nueva galería unificada (reemplaza las viejas)
+  new UnifiedDepotGallery();
   
   // 🚀 Botón WhatsApp flotante simple
   new WhatsAppFloatButton();
