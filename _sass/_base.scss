@@ -250,7 +250,7 @@ li {
   }
   
   .whatsapp-float-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 60px;
@@ -265,6 +265,12 @@ li {
     position: relative;
     overflow: hidden;
     
+    // Tamaños responsive
+    @media (min-width: $breakpoint-lg) {
+      width: 70px;
+      height: 70px;
+    }
+    
     &:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
@@ -276,34 +282,20 @@ li {
     }
     
     svg {
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       fill: currentColor;
+      flex-shrink: 0;
+      
+      @media (min-width: $breakpoint-lg) {
+        width: 36px;
+        height: 36px;
+      }
     }
     
-      // Mejorar visibilidad en desktop
-  @media (min-width: $breakpoint-md + 1) {
-    width: 70px;
-    height: 70px;
+
     
-    svg {
-      width: 36px;
-      height: 36px;
-    }
-    
-    // Agregar pulso sutil en desktop
-    &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: rgba(37, 211, 102, 0.3);
-      animation: whatsapp-pulse 2s infinite;
-      z-index: -1;
-    }
-    
-    // Tooltip en desktop
+    // Tooltip solo visible en desktop
     .whatsapp-tooltip {
       position: absolute;
       right: 80px;
@@ -321,6 +313,10 @@ li {
       pointer-events: none;
       z-index: 1001;
       
+      @media (max-width: $breakpoint-lg) {
+        display: none;
+      }
+      
       &::after {
         content: '';
         position: absolute;
@@ -334,25 +330,24 @@ li {
     }
     
     &:hover .whatsapp-tooltip {
-      opacity: 1;
-      visibility: visible;
-      right: 85px;
-    }
-  }
-  }
-  
-  // Animación de pulso para desktop
-  @media (min-width: $breakpoint-md + 1) {
-    @keyframes whatsapp-pulse {
-      0% {
-        transform: scale(1);
+      @media (min-width: $breakpoint-lg) {
         opacity: 1;
-      }
-      100% {
-        transform: scale(1.4);
-        opacity: 0;
+        visibility: visible;
+        right: 85px;
       }
     }
+  }
+}
+
+// Animaciones WhatsApp
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
   }
 }
 
@@ -593,15 +588,15 @@ img[src*="deposito"], img[src*="productos"] {
       gap: $spacing-md;
       
       .logo-image {
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
         object-fit: contain;
         filter: drop-shadow(0 0 20px rgba($primary-color, 0.5));
         animation: logoFloat 3s ease-in-out infinite;
         
         @media (max-width: $breakpoint-md) {
-          width: 80px;
-          height: 80px;
+          width: 150px;
+          height: 150px;
         }
       }
       

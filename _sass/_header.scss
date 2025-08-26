@@ -13,11 +13,6 @@
   &.scrolled {
     background-color: rgba($white, 0.98);
     box-shadow: $shadow-md;
-    
-    .navbar-logo {
-      transform: scale(0.95);
-      filter: drop-shadow(0 1px 2px rgba($secondary-color, 0.05));
-    }
   }
 }
 
@@ -25,10 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $spacing-md 0;
+  padding: $spacing-sm 0;
   
   @media (min-width: $breakpoint-lg) {
-    padding: $spacing-lg 0;
+    padding: $spacing-md 0;
   }
 }
 
@@ -40,21 +35,19 @@
     text-decoration: none;
     
     .navbar-logo {
-      width: 40px;
-      height: 40px;
+      width: 90px;
+      height: 90px;
       object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba($secondary-color, 0.1));
-      transition: all $transition-normal;
       
       @media (min-width: $breakpoint-lg) {
-        width: 50px;
-        height: 50px;
+        width: 100px;
+        height: 100px;
       }
       
       // Ajustes para dispositivos muy pequeños
       @media (max-width: $breakpoint-sm) {
-        width: 35px;
-        height: 35px;
+        width: 80px;
+        height: 80px;
       }
     }
     
@@ -93,19 +86,6 @@
     
     &:hover {
       text-decoration: none;
-      
-      .navbar-logo {
-        transform: scale(1.05);
-        filter: drop-shadow(0 4px 8px rgba($secondary-color, 0.2));
-      }
-      
-      .logo-main {
-        color: $primary-dark;
-      }
-      
-      .logo-sub {
-        color: $secondary-color;
-      }
     }
   }
 }

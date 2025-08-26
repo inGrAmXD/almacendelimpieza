@@ -688,10 +688,10 @@
   .carousel-slide {
     min-width: 100%;
     position: relative;
-    aspect-ratio: 3/4; // Aspect ratio que favorece fotos verticales
+    height: 400px; // Altura fija para mobile
     
     @media (min-width: $breakpoint-md) {
-      aspect-ratio: 16/9; // Más horizontal en desktop
+      height: 500px; // Altura fija para desktop
     }
     
          img {
