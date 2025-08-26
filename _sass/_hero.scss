@@ -150,6 +150,49 @@
   }
 }
 
+.hero-attention {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+  color: $primary-color; // Naranja
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  // Efecto de resaltado en naranja
+  text-shadow: 
+    1px 1px 0px rgba($black, 0.8),
+    2px 2px 0px rgba($black, 0.6),
+    0px 0px 15px rgba($primary-color, 0.5);
+  
+  // Animación sutil
+  animation: attention-glow 3s ease-in-out infinite alternate;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: $font-size-xl;
+    letter-spacing: 3px;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    font-size: $font-size-2xl;
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes attention-glow {
+  0% {
+    text-shadow: 
+      1px 1px 0px rgba($black, 0.8),
+      2px 2px 0px rgba($black, 0.6),
+      0px 0px 15px rgba($primary-color, 0.5);
+  }
+  100% {
+    text-shadow: 
+      1px 1px 0px rgba($black, 0.8),
+      2px 2px 0px rgba($black, 0.6),
+      0px 0px 25px rgba($primary-color, 0.8);
+  }
+}
+
 .hero-description {
   font-size: $font-size-lg;
   margin-bottom: $spacing-2xl;

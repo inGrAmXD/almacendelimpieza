@@ -14,6 +14,7 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
     <div class="hero-content">
       <h1 class="hero-title">{{ site.data.site.hero.title }}</h1>
       <p class="hero-subtitle" data-text="{{ site.data.site.hero.subtitle }}">{{ site.data.site.hero.subtitle }}</p>
+      <p class="hero-attention">{{ site.data.site.hero.attention }}</p>
       <p class="hero-description">Nos avalan más de 15 años de experiencia, brindando soluciones a comercios gastronómicos, hotelería, colegios, residencias geriátricas, centros de salud, empresas y mucho más!</p>
       
       <div class="hero-actions">
@@ -85,8 +86,8 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
 <section id="servicios" class="services-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <p class="section-subtitle">Soluciones Integrales para la limpieza profesional en todos los rubos, abarcando insumos de limpieza para todas las áreas.</p>
+      <h2 class="section-title">NUESTROS SERVICIOS</h2>
+      <p class="section-subtitle">Soluciones Integrales para la limpieza profesional en todos los rubos, abarcando insumos de limpieza para todas las áreas.</p>
     </div>
     
     <div class="services-grid">
@@ -105,8 +106,8 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
       <div class="sectors-grid">
         {% for sector in site.data.services.sectors %}
         <div class="sector-card">
-          <div class="sector-icon-container" data-sector="{{ forloop.index }}">
-            <div class="sector-icon" data-icon="{{ sector.icon }}"></div>
+          <div class="sector-image-container" data-sector="{{ forloop.index }}">
+            <img src="/assets/images/{{ sector.image }}" alt="{{ sector.title }}" class="sector-image">
           </div>
           <div class="sector-content">
             <h4 class="sector-title">{{ sector.title }}</h4>
@@ -130,8 +131,8 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
 <section id="galeria" class="gallery-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">🏭 Conocé Nuestro Depósito</h2>
-      <p class="section-subtitle">Un recorrido visual por el corazón de nuestra operación diaria</p>
+      <h2 class="section-title">RECORRIDO POR NUESTRO DEPOSITO</h2>
+      <p class="section-subtitle">Fotos varias pasando de forma lateral</p>
     </div>
     
     <!-- Video Hero ÉPICO con fusion de fotos -->
@@ -237,8 +238,8 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
 <section id="empresas" class="companies-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Empresas que Confían en Nosotros</h2>
-      <p class="section-subtitle">Marcas líderes que eligen nuestros productos y servicios</p>
+      <h2 class="section-title">LAS MARCAS QUE NOS ACOMPAÑAN</h2>
+      <p class="section-subtitle">Fotos pasando en línea recta con un fondo a conciliar de las siguientes marcas</p>
     </div>
     
     <div class="companies-carousel">
@@ -441,6 +442,20 @@ description: "Distribuidora líder en productos de limpieza profesional para gas
           </p>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Eventos Section (preparado para el futuro) -->
+<section id="eventos" class="events-section" style="display: none;">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">NUESTROS EVENTOS</h2>
+      <p class="section-subtitle">Conocé las actividades y eventos en los que participamos</p>
+    </div>
+    
+    <div class="events-grid">
+      <!-- Los eventos se agregarán aquí cuando estén disponibles -->
     </div>
   </div>
 </section>

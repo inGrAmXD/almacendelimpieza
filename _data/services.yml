@@ -1,7 +1,7 @@
 # Servicios principales
 services:
-  - title: "Distribución Mayorista"
-    description: "Productos de limpieza profesional por mayor con precios competitivos y entregas programadas."
+  - title: "DISTRIBUCIÓN MAYORISTA"
+    description: "Acercamos a nuestros clientes, los mejores precios con precios competitivos del mercado."
     icon: "truck"
     
   - title: "Asesoramiento Técnico"
@@ -14,56 +14,61 @@ services:
 
 # Rubros que atienden
 sectors:
-  - title: "Comercios Gastronómicos & Cadenas"
-    description: "Amplia gama de productos, y marcas para abastecer Restaurantes, Bares, Centros de producción, Comedores, y todo tipo de establecimiento gastronómico.
-    Atención personalizada para grupos gastronomicos."
+  - title: "Comercios Gastronomicos & Cadenas"
+    description: "Amplia gama de productos y marcas para abastecer Restaurantes, Bares, Centros de producción, Comedores y todo tipo de establecimiento gastronomico. Atencion personalizada para Cadenas Gastronomicas."
     icon: "restaurant"
+    image: "sectores/foto-cocina.jpg"
     products:
-      - "Diversidad en Productos Quimicos."
-      - "Papeleria Industrial para uso en cocinas."
-      - "Equipamiento para baños & amplia variedad de productos sanitarios."
-      - "Herramientas sanitarias & mucho más."
-      - "Productos Descartables."
+      - "Diversidad en Productos Quimicos"
+      - "Papeleria industrial para uso en cocinas"
+      - "Equipamiento para Baños & amplia variedad de productos"
+      - "Herramientas sanitarias & mucho mas…"
+      - "Productos Descartables"
       
-  - title: "Plantas de Producción & Catering"
+  - title: "Plantas de Produccion & Katering"
     description: "Asesoramiento personalizado para cadenas gastronómicas y centros de producción alimenticias."
     icon: "factory"
+    image: "sectores/foto-planta-produccion.jpg"
     products:
       - "Sistemas de limpieza automática"
       - "Productos de gran formato"
       - "Soluciones industriales"
       - "Asesoramiento técnico especializado"
       
-  - title: "Hoteles & Alojamientos"
+  - title: "Hoteleria"
     description: "Soluciones integrales de limpieza para hoteles, hostales y establecimientos de alojamiento."
     icon: "hotel"
+    image: "sectores/foto-lobby-hotel.jpg"
     products:
-      - "Productos para habitaciones"
-      - "Limpieza de baños y sanitarios"
-      - "Ambientadores profesionales"
-      - "Productos para áreas comunes"
+      - "Sistemas de Limpieza Habitaciones & Areas Comunes"
+      - "Sistemas de Higienización Sanitarias"
+      - "Sistemas y Productos Profesionales de Lavanderia"
+      - "Tratamientos de Pisos"
       
-  - title: "Colegios e Instituciones"
+  - title: "Colegios e instituciones"
     description: "Productos seguros y efectivos para centros educativos y espacios con alta concurrencia."
     icon: "school"
+    image: "sectores/foto-colegio.jpg"
     products:
       - "Desinfectantes certificados"
       - "Productos seguros para niños"
       - "Limpieza de aulas y comedores"
       - "Sistemas de higiene personal"
       
-  - title: "Centros Médicos"
+  - title: "Instituciones Geriatricas & Centros Medicos"
     description: "Productos especializados para residencias geriátricas, clínicas y centros de salud."
     icon: "medical"
+    image: "sectores/foto-geriatrico.jpg"
     products:
       - "Desinfectantes hospitalarios"
       - "Productos bactericidas"
       - "Limpieza de equipamiento médico"
       - "Soluciones de alta bioseguridad"
       
-  - title: "Empresas en General"
+  - title: "Empresas & oficinas"
     description: "Atención personalizada para oficinas, industrias y todo tipo de empresas."
     icon: "building"
+    image: "sectores/foto-empresa.jpg"
     products:
       - "Productos para oficinas"
       - "Limpieza industrial"

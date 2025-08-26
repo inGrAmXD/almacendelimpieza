@@ -5,9 +5,9 @@ company:
   description: "Somos una distribuidora especializada en productos de limpieza profesional. Vendemos a comercios gastronómicos & brindamos asesoramiento personalizado a cadenas gastronómicas y centros de producción alimenticias. Atendemos hotelería, colegios, residencias geriátricas, centros médicos y empresas."
 
 # Misión, Visión y Valores sugeridos
-mission: "Proveer productos de limpieza de alta calidad que garanticen la máxima higiene y seguridad en establecimientos gastronómicos, contribuyendo al éxito de nuestros clientes a través de soluciones eficientes y confiables."
+mission: "Proveer productos de limpieza de alta calidad que garanticen la máxima higiene y seguridad en todo tipo de establecimientos institucionales, contribuyendo al éxito de nuestros clientes a través de soluciones eficientes y confiables."
 
-vision: "Ser la distribuidora líder en productos de limpieza profesional para el sector gastronómico, reconocida por nuestra calidad, servicio y compromiso con la excelencia."
+vision: "Ser la distribuidora líder en productos de limpieza profesional, reconocida por nuestra calidad, servicio y compromiso con la excelencia."
 
 values:
   - title: "Calidad"
@@ -23,6 +23,7 @@ values:
 hero:
   title: ""
   subtitle: "LA DIFERENCIA ESTÁ EN EL SERVICIO"
+  attention: "ATENCIÓN DISPONIBLE LUNES A VIERNES"
   cta_text: "Ver servicios"
   cta_link: "#servicios"
   background_image: "/assets/images/15.jpeg"
@@ -45,6 +46,4 @@ stats:
   - number: "700+"
     text: "Clientes satisfechos"
   - number: "15+"
-    text: "Años de experiencia"
-  - number: "Lunes a Viernes"
-    text: "Atención disponible" 
+    text: "Años de experiencia" 
