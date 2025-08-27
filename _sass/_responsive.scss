@@ -99,6 +99,9 @@
   margin-bottom: $spacing-lg;
   
   .social-link {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
     padding: $spacing-sm $spacing-md;
     background-color: rgba($white, 0.1);
     border: 1px solid rgba($white, 0.2);
@@ -108,6 +111,13 @@
     font-weight: $font-weight-medium;
     text-decoration: none;
     transition: all $transition-fast;
+    
+    .social-icon {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
     
     &:hover {
       background-color: rgba($white, 0.2);
@@ -122,9 +132,19 @@
       border-color: #1877f2;
     }
     
-    &--instagram:hover {
-      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-      border-color: #E1306C;
+    &--instagram {
+      // Estado normal con gradiente sutil de Instagram
+      background: linear-gradient(45deg, rgba(131, 58, 180, 0.1), rgba(225, 48, 108, 0.1));
+      border-color: rgba(225, 48, 108, 0.3);
+      color: #E1306C;
+      
+      &:hover {
+        background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        border-color: #E1306C;
+        color: $white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(225, 48, 108, 0.4);
+      }
     }
     
     &--whatsapp:hover {

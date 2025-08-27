@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Permitir todos los bots de búsqueda
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Bloquear archivos innecesarios
+Disallow: /_site/
+Disallow: /assets/css/*.map
+Disallow: /*.yml
+Disallow: /Gemfile
+Disallow: /README.md
+
+# Sitemap
+Sitemap: https://almacendelimpieza.com/sitemap.xml

@@ -6,10 +6,10 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 50px; // Navbar súper delgado
+  padding-top: 80px; // Espacio suficiente para que no se corte con el navbar en mobile
   
   @media (min-width: $breakpoint-lg) {
-    padding-top: 60px;
+    padding-top: 70px;
   }
   
   // Efecto de partículas animadas premium
